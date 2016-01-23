@@ -291,7 +291,7 @@ function staticButton(x, y, width, height, id, text, fill, fillClicked)
 		if(this.text !== null)
 		{
 			//Text options
-			var fontSize = 35;
+			var fontSize = 30;
 			context.fillStyle = "white";
 			context.font = fontSize + "px sans-serif";
 			
@@ -495,7 +495,7 @@ function dynamicButton(x, y, width, height, id, text, fill, fillClicked, cost)
 		if(this.text !== null)
 		{
 			//Text options
-			var fontSize = 35;
+			var fontSize = 30;
 			context.fillStyle = "white";
 			context.font = fontSize + "px sans-serif";
 			
@@ -548,7 +548,7 @@ function dynamicButton(x, y, width, height, id, text, fill, fillClicked, cost)
 								this.fillStyle = this.fillStyleClicked;
 								amount -= this.perchaseCost;
 								this.perchased = true;
-								amountFactor += (1.00 / 25);
+								amountFactor += (2.00 / 25);
 								this.perchaseCost = this.perchaseCost * 2;
 							}
 						break;
@@ -558,7 +558,7 @@ function dynamicButton(x, y, width, height, id, text, fill, fillClicked, cost)
 								this.fillStyle = this.fillStyleClicked;
 								amount -= this.perchaseCost;
 								this.perchased = true;
-								amountFactor += (2.00 / 25);
+								amountFactor += (1.00 / 25);
 								this.perchaseCost = this.perchaseCost * 2;
 							}
 						break;
