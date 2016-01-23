@@ -1,52 +1,37 @@
 <!DOCTYPE html>
+<!--This is the main File in the game "Stock Piler", it is the first thing called and is written by Jacob Cox in cooperation with Ian Warshaw and Olivia Mark-->
 <html>
     <head>
-        <title>Game</title>
-        <script type="text/javascript" src="script.js"></script>
-        <!--<script type="text/javascript" src="game.js"></script>-->
-        <!--<script type="text/javascript" src="uiObject.js"></script>-->
-        <script type="text/javascript" src="button.js"></script>
-        <!--<link rel="stylesheet" type="text/css" href="style.css">-->
+        <title>Stock Piler</title>
+        <script src="script.js"></script>
+        
     </head>
-    <body>
-        <canvas id="canvas"></canvas>
+    <body style="overflow: hidden">
+        <canvas id="canvas" style="border:0px"></canvas>
     </body>
     
     <script>
-        var canvas = null;
-        var context = null;
-        var x, y, running;
-        
-        setup = function(){
-            canvas = document.getElementById("canvas");
-            context = canvas.getContext('2d');
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            //canvas.addEventListener("mousedown", mouseDown, false);
-            //context.fillRect(20, 20, 200, 200);
-            /*var game = new GameEngine(canvas, 60);
-			game.startGame(context);*/
-			//setInterval(runGame, 100);
-
-            var button = new Button("Hello", 10, 10, 100, 100);
-            button.render(canvas);
-			
-        }
-        
-        /*mouseDown = function(event){
-            x = event.pageX;
-            y = event.pageY;
-            context.fillStyle="#FF0000";
-            context.fillRect(x, y, 200, 200);
-        }
-		
-		runGame = function(){
-			context.clearRect(0, 0, canvas.width, canvas.height);
-		}*/
-            
-        setup();
-    </script>
+		canvas = document.getElementById("canvas");
+		if(canvas != null)
+		{
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+			setup(canvas);
+		}
+	</script>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
        
