@@ -1,10 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>This is a webpage</title>
-</head>
+    <head>
+        <title>Game</title>
+        <script type="text/javascript" src="script.js"></script>
+        <!--<script type="text/javascript" src="game.js"></script>-->
+        <!--<script type="text/javascript" src="uiObject.js"></script>-->
+        <script type="text/javascript" src="button.js"></script>
+        <!--<link rel="stylesheet" type="text/css" href="style.css">-->
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+    </body>
+    
+    <script>
+        var canvas = null;
+        var context = null;
+        var x, y, running;
+        
+        setup = function(){
+            canvas = document.getElementById("canvas");
+            context = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            //canvas.addEventListener("mousedown", mouseDown, false);
+            //context.fillRect(20, 20, 200, 200);
+            /*var game = new GameEngine(canvas, 60);
+			game.startGame(context);*/
+			//setInterval(runGame, 100);
 
-<body>
-</body>
+            var button = new Button("Hello", 10, 10, 100, 100);
+            button.render(canvas);
+			
+        }
+        
+        /*mouseDown = function(event){
+            x = event.pageX;
+            y = event.pageY;
+            context.fillStyle="#FF0000";
+            context.fillRect(x, y, 200, 200);
+        }
+		
+		runGame = function(){
+			context.clearRect(0, 0, canvas.width, canvas.height);
+		}*/
+            
+        setup();
+    </script>
 </html>
+
+
+       
