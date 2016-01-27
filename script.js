@@ -558,7 +558,7 @@ function dynamicButton(x, y, width, height, id, text, fill, fillClicked, cost)
 								this.fillStyle = this.fillStyleClicked;
 								amount -= this.perchaseCost;
 								this.perchased = true;
-								amountFactor += (1.00 / 25);
+								amountFactor += 1000;
 								this.perchaseCost = this.perchaseCost * 2;
 							}
 						break;
@@ -566,7 +566,7 @@ function dynamicButton(x, y, width, height, id, text, fill, fillClicked, cost)
 							this.fillStyle = this.fillStyleClicked;
 							if(this.perchased)
 							{
-								amount+=2;
+								amount+=2000;
 							}
 							else if(amount >= this.perchaseCost)
 							{
@@ -580,7 +580,7 @@ function dynamicButton(x, y, width, height, id, text, fill, fillClicked, cost)
 							this.fillStyle = this.fillStyleClicked;
 							if(this.perchased)
 							{
-								amount+=.25;
+								amount+=500;
 							}
 							else if(amount >= this.perchaseCost)
 							{
@@ -593,7 +593,7 @@ function dynamicButton(x, y, width, height, id, text, fill, fillClicked, cost)
 							this.fillStyle = this.fillStyleClicked;
 							if(this.perchased)
 							{
-								amount+=1;
+								amount+=1000;
 							}
 							else if(amount >= this.perchaseCost)
 							{
