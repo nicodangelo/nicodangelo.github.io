@@ -22,6 +22,10 @@ function setup(c)
 	
 	//set the amount variables
 	amount = 0.0; 
+	if(getItem("amount") !== null)
+	{
+		amount = getItem("amount");
+	}
 	netWorth = 0.0;
 	amountFactor = 0.0;
 	width = canvas.width;
@@ -157,23 +161,22 @@ function game()
 		console.log("game setup");
 		
 		//Create the Buttons
-		workButton = new staticButton(0, row * 2, column - 5, row - 5, "work", "Work", "#bf00ff", "#9900cc");
-		upgradesButton = new staticButton(0, row * 3, column - 5, row - 5, "upgrades", "Upgrades", "#ff9933", "#e67300");
-		companyButton = new staticButton(0, row * 4, column - 5, row - 5, "company", "Company",  "#1a8bff", "#0072e6");
-		optionsButton = new staticButton(0, row * 5, column - 5, row - 5, "options", "Options", "#ff9933", "#e67300");
-		stocksButton = new staticButton((column * 4) - 10, row * 2, column - 5, row - 5, "stocks", "Stocks", "#ff9933", "#e67300");
-		stockInfoButton = new staticButton((column * 4) - 10, row * 3, column - 5, row - 5, "stock_info", "Stock Info", "#ff9933", "#e67300");
-		investorsButton = new staticButton((column * 4) - 10, row * 4, column - 5, row - 5, "investors", "Investors", "#ff9933", "#e67300");
-		achievementsButton = new staticButton((column * 4) - 10, row * 5, column - 5, row - 5, "achievements", "Achievements", "#ff9933", "#e67300");
+		workButton = new staticButton(0, row * 2, column - 5, row - 5, "work", "Work", "#5900b3", "#7300e6", "#9933ff", false);
+		upgradesButton = new staticButton(0, row * 3, column - 5, row - 5, "upgrades", "Upgrades", "#ff8000", "#e67300", "#ff9933", false);
+		companyButton = new staticButton(0, row * 4, column - 5, row - 5, "company", "Company",  "#0099cc", "#00bfff", "#33ccff", false);
+		optionsButton = new staticButton(0, row * 5, column - 5, row - 5, "options", "Options", "#ff8000", "#e67300", "#ff9933", false);
+		stocksButton = new staticButton((column * 4) - 10, row * 2, column - 5, row - 5, "stocks", "Stocks", "#ff8000", "#e67300", "#ff9933", false);
+		stockInfoButton = new staticButton((column * 4) - 10, row * 3, column - 5, row - 5, "stock_info", "Stock Info", "#ff8000", "#e67300", "#ff9933", false);
+		investorsButton = new staticButton((column * 4) - 10, row * 4, column - 5, row - 5, "investors", "Investors", "#ff8000", "#e67300", "#ff9933", false);
+		achievementsButton = new staticButton((column * 4) - 10, row * 5, column-5, row-5, "achievements", "Achievements", "#ff8000", "#e67300", "#ff9933", false);
 		
-		hotDogStandButton = new dynamicButton((column * 1), row * 2, column - 5, row - 5, "hot_dog_stand", "Hot Dog Stand", "#1a8bff","#0072e6", 50.00);
-		restaurantButton = new dynamicButton((column * 1), row * 3, column - 5, row - 5, "restaurant", "Restaurant", "#1a8bff", "#0072e6", 500.00);
-		coffeeShopButton = new dynamicButton((column * 1), row * 4, column - 5, row - 5, "coffee_shop", "Coffee Shop", "#1a8bff", "#0072e6", 1000.00);
+		hotDogStandButton = new dynamicButton((column * 1), row * 2, column - 5, row - 5, "hot_dog_stand", "Hot Dog Stand", "#0099cc", "#00bfff", "#33ccff", 50.00, true);
+		restaurantButton = new dynamicButton((column * 1), row * 3, column - 5, row - 5, "restaurant", "Restaurant","#0099cc", "#00bfff", "#33ccff", 500.00, true);
+		coffeeShopButton = new dynamicButton((column * 1), row * 4, column - 5, row - 5, "coffee_shop", "Coffee Shop", "#0099cc", "#00bfff", "#33ccff", 1000.00, true);
 		
-		
-		hotDogVendorButton = new dynamicButton((column * 1), row * 2, column - 5, row - 5, "hot_dog_vendor", "Hot Dog Vendor", "#bf00ff", "#9900cc", 0.00);
-		waiterButton = new dynamicButton((column * 1), row * 3, column - 5, row - 5, "waiter", "Waiter", "#bf00ff", "#9900cc", 20.00);
-		musicianButton = new dynamicButton((column * 1), row * 4, column - 5, row - 5, "musician", "Musician", "#bf00ff", "#9900cc", 50.00);
+		hotDogVendorButton = new dynamicButton((column * 1), row * 2, column - 5, row - 5, "hot_dog_vendor", "Hot Dog Vendor", "#5900b3", "#7300e6", "#9933ff", 0.00, true);
+		waiterButton = new dynamicButton((column * 1), row * 3, column - 5, row - 5, "waiter", "Waiter",  "#5900b3", "#7300e6", "#9933ff", 20.00, true);
+		musicianButton = new dynamicButton((column * 1), row * 4, column - 5, row - 5, "musician", "Musician",  "#5900b3", "#7300e6", "#9933ff", 50.00, true);
 		
 		//add the buttons to the array
 		menuButtons.push(workButton);
@@ -206,13 +209,18 @@ function game()
 			companyButtons[y].shouldRender = false;
 		}
 		
-		//initialize the hotdogstand button as the only one that can be clicked
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		//initialize the buttons accordingly 
 		workButton.perchased = true;
 		hotDogVendorButton.perchased = true;
 		upgradesButton.perchased = true;
 		optionsButton.perchased = true;
 		companyButton.perchased = true;
 		achievementsButton.perchased = true;
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+		
+		
 		
 		for(x = 0; x < workButtons.length; x++)
 		{
@@ -250,13 +258,14 @@ function game()
 	
 	this.update = function()
 	{
+		setItem("amount", amount);
 		//call all other game update functions HERE!
 	};
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 //THE STATIC BUTTON FUNCTION
-function staticButton(x, y, width, height, id, text, fill, fillClicked)
+function staticButton(x, y, width, height, id, text, fillClicked, fill, cannotClicked, displayExtras)
 {
 	this.id = id;
 	this.x = x;
@@ -267,8 +276,11 @@ function staticButton(x, y, width, height, id, text, fill, fillClicked)
 	this.canBeClicked = true;
 	this.shouldRender = true;
 	this.fillStyle = fill;
+	this.shouldDisplayExtras = displayExtras;
 	this.fillStyleUnclicked = fill;
 	this.fillStyleClicked = fillClicked;
+	this.fillCannotBeClicked = cannotClicked;
+	this.cannotBeClicked = false;
 	this.perchased = false;
 	
 	this.setup = function(){};
@@ -276,13 +288,20 @@ function staticButton(x, y, width, height, id, text, fill, fillClicked)
 	this.render = function()
 	{
 		//the color of the button
-		if(this.perchased)
+		if(this.cannotBeClicked)
 		{
-			context.fillStyle = this.fillStyle;
+			context.fillStyle = this.fillCannotBeClicked;
 		}
 		else
 		{
-			context.fillStyle = this.fillStyleClicked;
+			if(this.perchased)
+			{
+				context.fillStyle = this.fillStyle;
+			}
+			else
+			{
+				context.fillStyle = this.fillStyleClicked;
+			}
 		}
 
 		//render the button itself
@@ -291,7 +310,7 @@ function staticButton(x, y, width, height, id, text, fill, fillClicked)
 		if(this.text !== null)
 		{
 			//Text options
-			var fontSize = 30;
+			var fontSize = 35;
 			context.fillStyle = "white";
 			context.font = fontSize + "px sans-serif";
 			
@@ -302,7 +321,7 @@ function staticButton(x, y, width, height, id, text, fill, fillClicked)
 			
 
 			this.text = text;
-			if(!this.perchased)
+			if(!this.perchased && this.shouldDisplayExtras)
 			{
 				this.text += " " + this.perchaseCost;
 			}
@@ -459,7 +478,7 @@ function staticButton(x, y, width, height, id, text, fill, fillClicked)
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 //THE DYNAMIC AND DISPLAY BUTTON FUNCTION
-function dynamicButton(x, y, width, height, id, text, fill, fillClicked, cost)
+function dynamicButton(x, y, width, height, id, text, fillClicked, fill, cannotClicked, cost, displayExtras)
 {
 	this.id = id;
 	this.x = x;
@@ -471,8 +490,11 @@ function dynamicButton(x, y, width, height, id, text, fill, fillClicked, cost)
 	this.shouldRender = true;
 	this.fillStyle = fill;
 	this.fillStyleUnclicked = fill;
+	this.shouldDisplayExtras = displayExtras;
 	this.fillStyleClicked = fillClicked;
 	this.perchased = false;
+	this.fillCannotBeClicked = cannotClicked;
+	this.cannotBeClicked = false;
 	this.perchaseCost = cost;
 	
 	this.setup = function(){};
@@ -480,13 +502,24 @@ function dynamicButton(x, y, width, height, id, text, fill, fillClicked, cost)
 	this.render = function()
 	{
 		//the color of the button
-		if(this.perchased)
+		if(this.cannotBeClicked)
 		{
-			context.fillStyle = this.fillStyle;
+			context.fillStyle = this.fillCannotBeClicked;
+			//if(amount >= this.perchaseCost)
+			//{
+			//	context.fillStyle = this.fillStyle;
+			//}
 		}
 		else
 		{
-			context.fillStyle = this.fillStyleClicked;
+			if(this.perchased)
+			{
+				context.fillStyle = this.fillStyle;
+			}
+			else
+			{
+				context.fillStyle = this.fillStyleClicked;
+			}
 		}
 		
 		//render the button itself
@@ -495,7 +528,7 @@ function dynamicButton(x, y, width, height, id, text, fill, fillClicked, cost)
 		if(this.text !== null)
 		{
 			//Text options
-			var fontSize = 30;
+			var fontSize = 35;
 			context.fillStyle = "white";
 			context.font = fontSize + "px sans-serif";
 			
@@ -505,7 +538,7 @@ function dynamicButton(x, y, width, height, id, text, fill, fillClicked, cost)
 			var textY = this.y + (this.height/2) + (this.height / 9);
 			
 			this.text = text;
-			if(!this.perchased || this.perchaseCost > 0)
+			if(!this.perchased || this.perchaseCost > 0 && this.shouldDisplayExtras)
 			{
 				this.text += " $" + this.perchaseCost;
 			}
@@ -558,7 +591,7 @@ function dynamicButton(x, y, width, height, id, text, fill, fillClicked, cost)
 								this.fillStyle = this.fillStyleClicked;
 								amount -= this.perchaseCost;
 								this.perchased = true;
-								amountFactor += 1000;
+								amountFactor += (1.00 / 25);
 								this.perchaseCost = this.perchaseCost * 2;
 							}
 						break;
@@ -566,7 +599,7 @@ function dynamicButton(x, y, width, height, id, text, fill, fillClicked, cost)
 							this.fillStyle = this.fillStyleClicked;
 							if(this.perchased)
 							{
-								amount+=2000;
+								amount+=2;
 							}
 							else if(amount >= this.perchaseCost)
 							{
@@ -580,7 +613,7 @@ function dynamicButton(x, y, width, height, id, text, fill, fillClicked, cost)
 							this.fillStyle = this.fillStyleClicked;
 							if(this.perchased)
 							{
-								amount+=500;
+								amount+=.25;
 							}
 							else if(amount >= this.perchaseCost)
 							{
@@ -593,7 +626,7 @@ function dynamicButton(x, y, width, height, id, text, fill, fillClicked, cost)
 							this.fillStyle = this.fillStyleClicked;
 							if(this.perchased)
 							{
-								amount+=1000;
+								amount+=1;
 							}
 							else if(amount >= this.perchaseCost)
 							{
@@ -638,3 +671,12 @@ function shouldRender(listOfButtons)
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
+function setItem(key, variable)
+{
+	localStorage.setItem(key, variable);
+}
+
+function getItem(key)
+{
+	return localStorage.getItem(key);
+}
