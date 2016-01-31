@@ -24,7 +24,7 @@ function setup(c)
 	amount = 0.0; 
 	if(getItem("amount") !== null)
 	{
-		amount = getItem("amount");
+		amount = parseInt(getItem("amount"), 10);
 	}
 	netWorth = 0.0;
 	amountFactor = 0.0;
