@@ -171,12 +171,12 @@ function game()
 		achievementsButton = new staticButton((column * 4) - 10, row * 5, column-5, row-5, "achievements", "Achievements", "#ff8000", "#e67300", "#ff9933", false);
 		
 		hotDogStandButton = new dynamicButton((column * 1), row * 2, column - 5, row - 5, "hot_dog_stand", "Hot Dog Stand", "#0099cc", "#00bfff", "#33ccff", 50.00, true);
-		restaurantButton = new dynamicButton((column * 1), row * 3, column - 5, row - 5, "restaurant", "Restaurant","#0099cc", "#00bfff", "#33ccff", 500.00, true);
-		coffeeShopButton = new dynamicButton((column * 1), row * 4, column - 5, row - 5, "coffee_shop", "Coffee Shop", "#0099cc", "#00bfff", "#33ccff", 1000.00, true);
+		restaurantButton = new dynamicButton((column * 1), row * 3, column - 5, row - 5, "restaurant", "Restaurant","#0099cc", "#00bfff", "#33ccff", 525.25, true);
+		coffeeShopButton = new dynamicButton((column * 1), row * 4, column - 5, row - 5, "coffee_shop", "Coffee Shop", "#0099cc", "#00bfff", "#33ccff", 8412, true);
 		
 		hotDogVendorButton = new dynamicButton((column * 1), row * 2, column - 5, row - 5, "hot_dog_vendor", "Hot Dog Vendor", "#5900b3", "#7300e6", "#9933ff", 0.00, true);
-		waiterButton = new dynamicButton((column * 1), row * 3, column - 5, row - 5, "waiter", "Waiter",  "#5900b3", "#7300e6", "#9933ff", 20.00, true);
-		musicianButton = new dynamicButton((column * 1), row * 4, column - 5, row - 5, "musician", "Musician",  "#5900b3", "#7300e6", "#9933ff", 50.00, true);
+		waiterButton = new dynamicButton((column * 1), row * 3, column - 5, row - 5, "waiter", "Waiter",  "#5900b3", "#7300e6", "#9933ff", 52.00, true);
+		musicianButton = new dynamicButton((column * 1), row * 4, column - 5, row - 5, "musician", "Musician",  "#5900b3", "#7300e6", "#9933ff", 1300.00, true);
 		
 		//add the buttons to the array
 		menuButtons.push(workButton);
@@ -217,7 +217,7 @@ function game()
 		optionsButton.perchased = true;
 		companyButton.perchased = true;
 		achievementsButton.perchased = true;
-		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		/////////////////////////////////////IMAMOTHERFUCKINGMEMEMACHINE/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
 		
 		
@@ -572,7 +572,7 @@ function dynamicButton(x, y, width, height, id, text, fillClicked, fill, cannotC
 								amount -= this.perchaseCost;
 								this.perchased = true;
 								amountFactor += (0.25 / 25);
-								this.perchaseCost = this.perchaseCost * 2;
+								this.perchaseCost = this.perchaseCost * 1.07;
 							}
 						break;
 					case "coffee_shop": 
@@ -582,7 +582,7 @@ function dynamicButton(x, y, width, height, id, text, fillClicked, fill, cannotC
 								amount -= this.perchaseCost;
 								this.perchased = true;
 								amountFactor += (2.00 / 25);
-								this.perchaseCost = this.perchaseCost * 2;
+								this.perchaseCost = this.perchaseCost * 1.15;
 							}
 						break;
 					case "restaurant": 
@@ -591,8 +591,8 @@ function dynamicButton(x, y, width, height, id, text, fillClicked, fill, cannotC
 								this.fillStyle = this.fillStyleClicked;
 								amount -= this.perchaseCost;
 								this.perchased = true;
-								amountFactor += (1.00 / 25);
-								this.perchaseCost = this.perchaseCost * 2;
+								amountFactor += (5.25 / 25);
+								this.perchaseCost = this.perchaseCost * 1.14;
 							}
 						break;
 					case "musician": 
