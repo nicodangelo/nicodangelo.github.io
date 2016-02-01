@@ -310,7 +310,7 @@ function staticButton(x, y, width, height, id, text, fillClicked, fill, cannotCl
 		if(this.text !== null)
 		{
 			//Text options
-			var fontSize = 35;
+			var fontSize = 25;
 			context.fillStyle = "white";
 			context.font = fontSize + "px sans-serif";
 			
@@ -529,7 +529,7 @@ function dynamicButton(x, y, width, height, id, text, fillClicked, fill, cannotC
 		if(this.text !== null)
 		{
 			//Text options
-			var fontSize = 35;
+			var fontSize = 25;
 			context.fillStyle = "white";
 			context.font = fontSize + "px sans-serif";
 			
