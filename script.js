@@ -323,7 +323,8 @@ function staticButton(x, y, width, height, id, text, fillClicked, fill, cannotCl
 			this.text = text;
 			if(!this.perchased && this.shouldDisplayExtras)
 			{
-				this.text += " " + this.perchaseCost;
+				var newAmount = this.perchaseCost.toFixed(2);
+				this.text += " $" + newAmount;
 			}
 			
 			//render the Text over the button
@@ -540,7 +541,8 @@ function dynamicButton(x, y, width, height, id, text, fillClicked, fill, cannotC
 			this.text = text;
 			if(!this.perchased || this.perchaseCost > 0 && this.shouldDisplayExtras)
 			{
-				this.text += " $" + this.perchaseCost;
+				var newAmount = this.perchaseCost.toFixed(2);
+				this.text += " $" + newAmount;
 			}
 
 			//render the Text over the button
