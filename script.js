@@ -497,6 +497,7 @@ function dynamicButton(x, y, width, height, id, text, fillClicked, fill, cannotC
 	this.fillCannotBeClicked = cannotClicked;
 	this.cannotBeClicked = false;
 	this.perchaseCost = cost;
+	this.moneyGain = cost / 4;
 	
 	this.setup = function(){};
 	
@@ -573,7 +574,8 @@ function dynamicButton(x, y, width, height, id, text, fillClicked, fill, cannotC
 								this.fillStyle = this.fillStyleClicked;
 								amount -= this.perchaseCost;
 								this.perchased = true;
-								amountFactor += ((0.25 * 1.07) / 25);
+								this.moneyGain = ((moneyGain) * 1.07);
+								amountFactor += (this.moneyGain / 25);
 								this.perchaseCost = this.perchaseCost * 1.07;
 							}
 						break;
@@ -583,7 +585,8 @@ function dynamicButton(x, y, width, height, id, text, fillClicked, fill, cannotC
 								this.fillStyle = this.fillStyleClicked;
 								amount -= this.perchaseCost;
 								this.perchased = true;
-								amountFactor += ((2.00 * 1.07) / 25);
+								this.moneyGain = ((moneyGain) * 1.15);
+								amountFactor += (this.moneyGain / 25);
 								this.perchaseCost = this.perchaseCost * 1.15;
 							}
 						break;
@@ -593,7 +596,8 @@ function dynamicButton(x, y, width, height, id, text, fillClicked, fill, cannotC
 								this.fillStyle = this.fillStyleClicked;
 								amount -= this.perchaseCost;
 								this.perchased = true;
-								amountFactor += ((5.25 * 1.07) / 25);
+								this.moneyGain = ((moneyGain) * 1.14);
+								amountFactor += (this.moneyGain / 25);
 								this.perchaseCost = this.perchaseCost * 1.14;
 							}
 						break;
