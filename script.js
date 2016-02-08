@@ -662,7 +662,7 @@ function renderAmounts()
 	context.font="40px Georgia";
 	var newAmount = amount.toFixed(2);
 	context.fillText("$" + newAmount, column, row);
-	context.fillText("Net Worth: $" + netWorth, column * 3, row);
+	//context.fillText("Net Worth: $" + netWorth, column * 3, row);
 }
 
 function shouldRender(listOfButtons)
