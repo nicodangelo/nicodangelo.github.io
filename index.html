@@ -1,24 +1,107 @@
-<!DOCTYPE html>
-<!--This is the main File in the game "Stock Piler", it is the first thing called and is written by Jacob Cox in cooperation with Ian Warshaw and Olivia Mark-->
+<!doctype html>
 <html>
-    <head>
-        <title>Stock Piler</title>
-        <script src="script.js"></script>
+	<head>
+		<title>StockPiler</title>
+        <script src="js/util.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/jquery/jquery-1.12.0.js"></script>
+        <link rel="stylesheet" href="css/styles.css">
+	</head>
+    <body>
         
-    </head>
-    <body style="overflow: hidden">
-        <canvas id="canvas" style="border:0px"></canvas>
+        <div id="header">
+                <div class='logo'><a href="#">Stock<span>Piler</span></a></div>
+        </div><!--END OF "header" DIV-->
+        
+        <div id="info_display">
+            <div id= "amount_display" class="amountDisplay">$0.00</div>
+        </div><!--END OF "info_display" DIV-->
+        
+        <div id="container">
+           
+            <div id="game_Container">
+                <div id="nav_side_bar_left">
+                    <ul id="nav_left">
+                        <li><a id="jobs_button" onclick="clickmeNav(1)">Jobs</a></li>
+                        <li><a id="companies_button" onclick="clickmeNav(2)">Companies</a></li>
+                        <li><a id="upgrades_button" onclick="clickmeNav(3)">Upgrades</a></li>
+                        <li><a id="options_button" onclick="clickmeNav(4)">Options</a></li>
+                    </ul>
+                </div><!--END OF "nav_side_bar_left"-->
+                
+                <div id="nav_side_bar_right">
+                    <ul id="nav_right">
+                        <li><a id="stocks_button" onclick="clickmeNav(5)">Stocks</a></li>
+                        <li><a id="stockinfo_button" onclick="clickmeNav(6)">Stock Info</a></li>
+                        <li><a id="investors_button" onclick="clickmeNav(7)">Investors</a></li>
+                        <li><a id="achievements_button" onclick="clickmeNav(8)">Achievements</a></li>
+                    </ul>
+                </div><!--END OF "nav_side_bar_right"-->
+                
+                <div id="dynamic">
+                    <div id="dynamic_list">
+                        <div id="display1">
+                             <ul>
+                                <li><a id="active_job_button" onclick="clickme(1)">Sell a Lollipop + $0.25</a></li>
+                                <li><a id="upgrade_job_button" onclick="clickme(2)">Upgrade Job</a></li>
+                            </ul>
+                        </div><!--END OF DISPLAY1-->
+                        
+                        <div id="display2">
+                            <ul>
+                                companies
+                            </ul>
+                        </div><!--END OF DISPLAY2-->
+                        
+                        <div id="display3">
+                            <ul>
+                                upgrades
+                            </ul>
+                        </div><!--END OF DISPLAY3-->
+                        
+                        <div id="display4">
+                             <ul>
+                                 options
+                            </ul>
+                        </div><!--END OF DISPLAY4-->
+                        
+                        <div id="display5">
+                            <ul>
+                                stocks
+                            </ul>
+                        </div><!--END OF DISPLAY5-->
+                        
+                        <div id="display6">
+                            <ul>
+                                stock info
+                            </ul>
+                        </div><!--END OF DISPLAY6-->
+                        
+                        <div id="display7">
+                            <ul>
+                                investors
+                            </ul>
+                        </div><!--END OF DISPLAY7-->
+                        
+                        <div id="display8">
+                            <ul>
+                                achievements
+                            </ul>
+                        </div><!--END OF DISPLAY8-->
+                            
+                    </div><!--END OF DYNAMIC LIST-->
+                    
+                </div><!--END OF "dynamic"-->
+                
+            </div><!--END OF "gameContainer" DIV-->
+
+        </div><!--END OF "conntainer" DIV-->
+        
+        <div id="footer">
+            <div class='copywrite'><a href="#">&copy;2016 Jacob Cox</a></div>
+        </div><!--END OF "footer" DIV-->
+        
     </body>
-    
-    <script>
-		canvas = document.getElementById("canvas");
-		if(canvas != null)
-		{
-			canvas.width = window.innerWidth;
-			canvas.height = window.innerHeight;
-			setup(canvas);
-		}
-	</script>
 </html>
 
 
@@ -34,4 +117,29 @@
 
 
 
-       
+
+
+
+
+<!-- HOW TO USE THE POPUP IN HTML
+	<body>
+    	<div id="container">
+        	<header>This is the header</header>
+            
+            <div id= "blanket" style="display:none;"></div>
+            <div id= "popUpDiv" style="display:none;">
+                <a onClick="popup('popUpDiv')">Close popup</a>
+            </div>
+
+            
+            <div id="displayMoney">Amount To Display</div>
+        
+            <div id="main">
+            	This is the main content area
+                <a onClick="popup('popUpDiv')">Click to see a popup</a>
+            </div>
+            
+            <footer>This is the footer</footer>
+        </div>
+	</body>
+-->
