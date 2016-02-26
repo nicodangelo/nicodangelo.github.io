@@ -62,6 +62,7 @@ window.onload = function()
     money = 0.0;
     if(shouldSave)
         //loadSave();
+        loadSave();
 	amountFactor = 0.25;
 	before = new Date().getTime();
 	speed = 0;
