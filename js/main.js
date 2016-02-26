@@ -18,18 +18,18 @@ var loaded = false;
 
 var jobs = [
     /*0*/new Job("Candy Sales", 0.00, 0.25, null, true),
-    /*1*/new Job("Hot dog sales", 5.00, 1.00, null, true),
-    /*2*/new Job("Burger Flipper", 50.00, 2.75, null, true),
-    /*3*/new Job("Grocery Bagger", 70.65, 3.26, null, true),
-    /*4*/new Job("Laborer", 42.20, 5.50, null, true),
-    /*5*/new Job("Teacher", 90.00, 8.00, null, true),
-    /*6*/new Job("Dentist", 80.63, 10.00, null, true),
-    /*7*/new Job("Programmer", 34.56, 12.75, null, true),
-    /*8*/new Job("Project Leader", 280.69, 15.00, null, true),
-    /*9*/new Job("Manager", 500.00, 20.00, null, true),
-    /*10*/new Job("CEO", 1200.12, 33.33, null, true),
+    /*1*/new Job("Hot dog sales", 50.00, 1.00, null, true),
+    /*2*/new Job("Burger Flipper", 150.00, 2.75, null, true),
+    /*3*/new Job("Grocery Bagger", 270.00, 3.26, null, true),
+    /*4*/new Job("Laborer", 420, 5.50, null, true),
+    /*5*/new Job("Teacher", 690.00, 8.00, null, true),
+    /*6*/new Job("Dentist", 800.63, 10.00, null, true),
+    /*7*/new Job("Programmer", 1234.56, 12.75, null, true),
+    /*8*/new Job("Project Leader", 2580.69, 15.00, null, true),
+    /*9*/new Job("Manager", 5000.00, 20.00, null, true),
+    /*10*/new Job("CEO", 12000.12, 33.33, null, true),
     /*11*/new Job("Owner and Founder", 20000.00, 50.00, null, true),
-    /*12*/new Job("Mom", 2450.00, 69.00, null, true)
+    /*12*/new Job("Mom", 245000.00, 69.00, null, true)
     
     /*actual costs: */
     
