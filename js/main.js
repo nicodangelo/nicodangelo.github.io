@@ -61,7 +61,6 @@ window.onload = function()
     currentJob = 0;
     money = 0.0;
     if(shouldSave)
-        //loadSave();
         loadSave();
 	amountFactor = 0.25;
 	before = new Date().getTime();
