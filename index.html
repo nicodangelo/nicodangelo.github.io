@@ -10,7 +10,7 @@
     <body>
         
         <div id="header">
-                <div class='logo'><a href="#">Stock<span>Piler</span></a></div>
+                <div class="logo"><a href="index.html">Stock<span>Piler</span></a></div>
         </div><!--END OF "header" DIV-->
         
         <div id="info_display">
@@ -42,6 +42,7 @@
                     <div id="dynamic_list">
                         <div id="display1">
                              <ul>
+                             	<li class="titleBar">Jobs</li>
                                 <li><a id="active_job_button" onclick="clickme(1)">Sell a Lollipop + $0.25</a></li>
                                 <li><a id="upgrade_job_button" onclick="clickme(2)">Upgrade Job</a></li>
                             </ul>
@@ -49,43 +50,90 @@
                         
                         <div id="display2">
                             <ul>
-                                companies
+                            	<li class="titleBar">Companies</li>
+                                
+                                <li id="company0">
+                                	<div id="notPerchased0" class="notPerchased" onClick="perchaseCompany(0)">
+                                        <div id="perchaseName0" class="perchaseName"></div>
+                                        <div id="perchasePrice0" class="perchacePrice"></div>
+                                    </div>
+                                    <div class="company">
+                         				<div id="companyButton0" class="button" onClick="perchaseCompany(0)">
+                                       	  <div id="owned0" class="owned"></div>
+                                        </div>
+                                        <!--<div class="running"></div>-->
+                                        <div class="progress">
+                                        	<div id="bar0" class="bar"></div>
+                                        </div>
+                                        <div class="containerBar">
+                                        	<div id="name0" class="name name0"></div>
+                                            <div class="progressInfo">
+                                            	<div id= "inc0" class="inc inc0"></div>
+                                            	<div id="cost0" class="cost"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li><!--END OF COMPANY0-->
+                                
+                                <li id="company1">
+                                    <div id="notPerchased1" class="notPerchased" onClick="perchaseCompany(1)">
+                                            <div id="perchaseName1" class="perchaseName"></div>
+                                            <div id="perchasePrice1" class="perchacePrice"></div>
+                                        </div>
+                                        <div class="company">
+                                            <div id="companyButton1" class="button" onClick="perchaseCompany(1)">
+                                              <div id="owned1" class="owned"></div>
+                                            </div>
+                                            <!--<div class="running"></div>-->
+                                            <div class="progress">
+                                                <div id="bar1" class="bar"></div>
+                                            </div>
+                                            <div class="containerBar">
+                                                <div id="name1" class="name name1"></div>
+                                                <div class="progressInfo">
+                                                    <div id= "inc1" class="inc inc1"></div>
+                                                    <div id="cost1" class="cost"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </li><!--END OF COMPANY1-->
+                                
                             </ul>
                         </div><!--END OF DISPLAY2-->
                         
                         <div id="display3">
                             <ul>
-                                upgrades
+                            	<li class="titleBar">Upgrades</li>
                             </ul>
                         </div><!--END OF DISPLAY3-->
                         
                         <div id="display4">
                              <ul>
-                                 options
+                             	<li class="titleBar">Options</li>
                             </ul>
                         </div><!--END OF DISPLAY4-->
                         
                         <div id="display5">
                             <ul>
-                                stocks
+                            	<li class="titleBar">Stocks</li>
                             </ul>
                         </div><!--END OF DISPLAY5-->
                         
                         <div id="display6">
                             <ul>
-                                stock info
+                            	<li class="titleBar">Stock Info</li>
                             </ul>
                         </div><!--END OF DISPLAY6-->
                         
                         <div id="display7">
                             <ul>
-                                investors
+                            	<li class="titleBar">Investors</li>
                             </ul>
                         </div><!--END OF DISPLAY7-->
                         
                         <div id="display8">
                             <ul>
-                                achievements
+                            	<li class="titleBar">Achievements</li>
                             </ul>
                         </div><!--END OF DISPLAY8-->
                             

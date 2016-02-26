@@ -11,8 +11,15 @@
     box-sizing: border-box;
 }
 
+body, html {
+    min-height: 100%;
+}
+
 body{
 	font-family: 'Georgia';
+	background-image: url("../images/Background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 a{
@@ -22,8 +29,6 @@ a{
 div#container{
     width: 100%;
     margin-top: 20px;
-    /*padding-bottom: 99999px;
-    margin-bottom: -99999px;*/
 }
 
 /*END MAIN STYLES*/
@@ -33,7 +38,7 @@ div#container{
 /*HEADER STYLES*/
 div#header{
 	width: 100%;
-	height: 50px;
+	height: 40px;
 	background-color: #808080;
 	margin: 0px auto;
     padding-bottom: 0px;
@@ -41,7 +46,7 @@ div#header{
 
 .logo{
     float: left;
-    margin-top: 10px;
+    margin-top: 5px;
     margin-left: 10px;
 }
 
@@ -63,7 +68,7 @@ div#header{
 div#info_display{
     color:#fff;
     width: 100%;
-	height: 50px;
+	height: 40px;
     background-color: #c0392b;
 	margin: 0px auto;
 }
@@ -71,7 +76,7 @@ div#info_display{
 .amountDisplay {
     color:#000;
     margin-left: 10%;
-    font-size: 2.3em;
+    font-size: 2.0em;
 }
 /*END OF INFO_DISPLAY STYLES*/
 
@@ -80,11 +85,10 @@ div#info_display{
 /*NAV_SIDE_BAR_LEFT STYLES*/
 
 div#nav_side_bar_left {
-    width: 20%;
+    width: 300px;
     height: 100%;
-    /*background-color: #090;*/
     margin-top: 10px;
-    float:left;
+    float: left;
     min-height:300px;
 }
 
@@ -99,10 +103,10 @@ ul#nav_left li {
 ul#nav_left li a {
     color:#000;
     display:block;
-    font-size: 1.5em;
+    font-size: 1.6em;
     background-color: #c0392b;
-    padding: 12%;
-    margin:10px;
+    padding: 10%;
+    margin:12px;
     margin-top: 30px;
     transition: 0.1s;
     text-align: center;
@@ -163,7 +167,7 @@ ul#nav_left li a:active {
 /*NAV_SIDE_BAR_RIGHT STYLES*/
 
 div#nav_side_bar_right {
-    width: 20%;
+    width: 300px;
     height: 100%;
     /*background-color:#009;*/
     margin-top: 10px;
@@ -182,10 +186,10 @@ ul#nav_right li {
 ul#nav_right li a {
     color:#000;
     display:block;
-    font-size: 1.5em;
+    font-size: 1.6em;
     background-color: #c0392b;
-    padding: 12%;
-    margin:10px;
+    padding: 10%;
+    margin:12px;
     margin-top: 30px;
     transition: 0.1s;
     text-align: center;
@@ -213,10 +217,10 @@ ul#nav_right li a:active {
 
 /*DYNAMIC STYLES*/
 div#dynamic {
+	/*background-color: #8500F1;*/
     height: 100%;
-    min-height:100%;
-    margin-left:20%;
-    margin-right:20%;
+    margin-left:310px;
+    margin-right:310px;
     list-style: none;
 }
 
@@ -233,8 +237,6 @@ div#dynamic_list div {
 div#dynamic_list div ul {
     list-style: none;
     margin-top: 10px;
-    min-height:50%;
-    position:absolute;
 }
 
 div#dynamic_list div ul li {
@@ -248,21 +250,31 @@ div#dynamic_list div ul li a {
     /*DISLPAY1*/
 #display1 {
     display:block;
-    width:inherit;
+}
+
+.titleBar {
+	background-color: #c0392b;
+	padding: 3px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	margin-bottom: 20px;
+	margin-left: 50px;
+	margin-right: 50px;
+	font-size: 28px;
 }
 
 #active_job_button {
     display:block;
-    padding: 170px;
     background-color: #c0392b;
     transition: 0.1s;
-    font-size: 1.5em;
-    margin-left: 28%;
-    margin-right: 30%;
-    margin-top: 6%;
-    min-width: 100%;
-    height: 40%;
-    
+    font-size: 1.9em;
+	padding-top: 15%;
+	padding-bottom: 15%;
+	padding-left: 5%;
+	padding-right: 5%;
+	margin-left: 90px;
+	margin-right: 90px;
+
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none;   /* Chrome/Safari/Opera */
     -khtml-user-select: none;    /* Konqueror */
@@ -273,16 +285,18 @@ div#dynamic_list div ul li a {
 }
 
 #upgrade_job_button {
-    display:block;
-    padding:30px;
+   	display:block;
     background-color: #c0392b;
     transition: 0.1s;
-    font-size: 1.3em;
-    margin-left: 28%;
-    margin-right: 30%;
-    margin-top: 2%;
-    width:60%;
-    height: 15%;
+    font-size: 1.2em;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	padding-left: 5%;
+	padding-right: 5%;
+	margin: 15px;
+	margin-left: 90px;
+	margin-right: 370px;
+
     
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none;   /* Chrome/Safari/Opera */
@@ -308,73 +322,202 @@ div#dynamic_list div ul li a {
     
 }
 
+.company
+{
+	position:absolute;
+	width: 25%;
+	height: 70px;
+    /*background-color: #cccccc;*/
+}
+
+.notPerchased {
+	position:absolute;
+	width: 25%;
+	height: 70px;
+    background-color: #3E3E3E;
+	z-index: 5;
+	
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* IE/Edge */
+    user-select: none;           /* non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+.notPerchased:hover { background-color: #232323; }
+
+.notPerchased:active { background-color: #595959; }
+
+.perchaseName {
+	margin-left: -5px;
+	margin-top: 12px;
+	color: white;
+	
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* IE/Edge */
+    user-select: none;           /* non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+.perchacePrice {
+	color: white;
+	margin-top: 5px;
+	
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* IE/Edge */
+    user-select: none;           /* non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+#company0 {
+	margin-top: 0%;
+}
+
+#company1 {
+	margin-top: 15%;
+}
+
+#company2 {
+	margin-top: 28%;
+}
+
+#company3 {
+	margin-top: 24%;
+}
+
+.button {
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	bottom: 10px;
+	width: 60px;
+	height: 60px;
+	background-color: #EEEEEE;
+	z-index: 2;
+	box-shadow: 0 0 5px 2px rgba(0,0,0,.35);	
+	transition: 0.1s; 
+	
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* IE/Edge */
+    user-select: none;           /* non-prefixed version, currently
+                                  not supported by any browser */
+	}
+	
+.button:hover { background-color: #DDDDDD; }
+
+.button:active { background-color: #BBBBBB; }
+
+.running {
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	bottom: 10px;
+	width: 60px;
+	height: 60px;
+	background-color: #888888;
+	z-index: 2;
+	box-shadow: 0 0 5px 2px rgba(0,0,0,.35);	
+	transition: 0.1s; 
+}
+
+.progress {
+	position: absolute;
+	left: 70px;
+	right: 5px;
+	bottom: 5px;
+	height: 28px;
+	background-color: black;
+}
+
+.progressInfo {
+	position: absolute;
+	left: 20px;
+	right: 0px;
+	bottom: 32px;
+	height: 28px;
+	background-color: #353535;
+	
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* IE/Edge */
+    user-select: none;           /* non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+.containerBar{
+	position: absolute;
+	left: 50px;
+	right: 5px;
+	top: 5px;
+	bottom: 5px;
+}
+
+.name {
+	position: absolute;
+	width: 150px;
+	height: 10px;
+	left: 2px;
+	top: 4px;
+	text-align:right;
+	font-size: 16px;
+	color: white;
+	z-index: 2;
+}
+
+.owned {
+	position: absolute;
+	margin-top:15px;
+	align-self:center;
+	height: 30px;
+	width: 60px;
+	font-size: 22px;
+	color: black;
+}
+
+.cost {
+	position: absolute;
+	top: 4px;
+	right: 5px;
+	height: 30px;
+	width: 150px;
+	text-align: right;
+	font-size: 16px;
+	color:white;
+	/*z-index: 1;*/
+	
+}
+
+.inc {
+	position: absolute;
+	top: 33px;
+	left: 25%;
+	height: 30px;
+	width: 100px;
+	text-align: right;
+	font-size: 20px;
+	color:white;
+}
+
+.bar {
+	position: absolute;    
+	width: 10%;     
+	height: 100%;
+	background-color: blue; 
+}
     /*END DISPLAY2*/
-
-
-
-
-
-
-
-
-
-
-/*
-div#dynamic {
-    height: 100%;
-    background-color: #fff;
-    min-height:500px;
-    margin-top: 5px;
-    margin-left:20%;
-    margin-right:20%;
-}
-
-ul#display1 {
-    display:block;
-}
-
-ul#display1 li{
-    list-style:none;
-}
-
-#active_job_button {
-    color:#000;
-    display:block;
-    font-size: 2.0em;
-    background-color: #c0392b;
-    max-width: 70%;
-    padding: 170px;
-    margin:20px;
-    margin-top: 20px;
-    margin-left: 15%;
-    transition: 0.1s;
-    text-align: center;
-    
-
-}
-
-#upgrade_job_button {
-    color:#000;
-    display:block;
-    font-size: 1.5em;
-    background-color: #c0392b;
-    max-width: 30%;
-    padding: 18px;
-    margin:20px;
-    margin-top: 8px;
-    margin-left: 15%;
-    transition: 0.1s;
-    text-align: center;
-
-}
-
-ul#display1 li a:hover {
-    background-color: #d55244;
-}
-
-ul#display1 li a:active {
-    background-color: #a63326;   
-}*/
 
 /*END DYNAMIC STYLES*/
 
