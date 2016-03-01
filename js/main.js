@@ -22,7 +22,7 @@ var moneyDisplay;
 var upgradeJobButton;
 var jobButton;
 var currentJob;
-var shouldSave = false;
+var shouldSave = true;
 var navIndex = 1;
 var width = 0;
 var loaded = false;
@@ -68,7 +68,7 @@ var company_progress = [
 ////////////////////////////////////////////////--2--//////////////////////////////////////////////
 window.onload = function()
 {
-    localStorage.clear();
+    //localStorage.clear();
     
     //initialize variables
     currentJob = 0;
