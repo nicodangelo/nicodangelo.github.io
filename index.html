@@ -42,9 +42,11 @@
                     <div id="dynamic_list">
                         <div id="display1">
                              <ul>
-                             	<li class="titleBar">Jobs</li>
-                                <li><a id="active_job_button" onclick="clickme(1)">Sell a Lollipop + $0.25</a></li>
-                                <li><a id="upgrade_job_button" onclick="clickme(2)">Upgrade Job</a></li>
+                             	<li><div class="titleBarSpecial">Jobs</div></li>
+                             	<li><canvas id="dynamicJobButton" onclick="clickme(1)"></canvas></li>
+                             	<!--<li class="titleBar">Jobs</li>-->
+                                <!--<li><a id="active_job_button" onclick="clickme(1)">Sell a Lollipop + $0.25</a></li>-->
+                                <!--<li><a id="upgrade_job_button" onclick="clickme(2)">Upgrade Job</a></li>-->
                             </ul>
                         </div><!--END OF DISPLAY1-->
                         
@@ -53,13 +55,13 @@
                             	<li class="titleBar">Companies</li>
                                 
                                 <li id="company0">
-                                	<div id="notPerchased0" class="notPerchased" onClick="perchaseCompany(0)">
+                                	<div id="notPerchased0" class="notPerchased" onClick="clickmePerchaseCompany(0)">
                                         <div id="perchaseName0" class="perchaseName"></div>
                                         <div id="perchasePrice0" class="perchacePrice"></div>
                                     </div>
                                     <div class="company">
-                         				<div id="companyButton0" class="button" onClick="perchaseCompany(0)">
-                                       	  <div id="owned0" class="owned"></div>
+                         				<div id="companyButton0" class="button" onClick="clickmePerchaseCompany(0)">
+                                       	  <div id="owned0" class="owned" onclick="clickmePerchaseCompany(0)"></div>
                                         </div>
                                         <!--<div class="running"></div>-->
                                         <div class="progress">
@@ -76,13 +78,13 @@
                                 </li><!--END OF COMPANY0-->
                                 
                                 <li id="company1">
-                                    <div id="notPerchased1" class="notPerchased" onClick="perchaseCompany(1)">
+                                    <div id="notPerchased1" class="notPerchased" onClick="clickmePerchaseCompany(1)">
                                             <div id="perchaseName1" class="perchaseName"></div>
                                             <div id="perchasePrice1" class="perchacePrice"></div>
                                         </div>
                                         <div class="company">
-                                            <div id="companyButton1" class="button" onClick="perchaseCompany(1)">
-                                              <div id="owned1" class="owned"></div>
+                                            <div id="companyButton1" class="button" onClick="clickmePerchaseCompany(1)">
+                                              <div id="owned1" class="owned" onclick="clickmePerchaseCompany(1)"></div>
                                             </div>
                                             <!--<div class="running"></div>-->
                                             <div class="progress">
@@ -110,6 +112,7 @@
                         <div id="display4">
                              <ul>
                              	<li class="titleBar">Options</li>
+                                <li><a id="reset_button" onclick="resetGame()">RESET GAME</a></li>
                             </ul>
                         </div><!--END OF DISPLAY4-->
                         

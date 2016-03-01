@@ -37,9 +37,10 @@ div#container{
 
 /*HEADER STYLES*/
 div#header{
+    opacity: 0.9;
 	width: 100%;
 	height: 40px;
-	background-color: #808080;
+	background-color: #353535;
 	margin: 0px auto;
     padding-bottom: 0px;
 }
@@ -57,7 +58,7 @@ div#header{
 
 .logo a span{
     font-weight: 500;
-    color: #c0392b;
+    color: #00fcff;
 }
 
 /*END HEADER STYLES*/
@@ -69,8 +70,9 @@ div#info_display{
     color:#fff;
     width: 100%;
 	height: 40px;
-    background-color: #c0392b;
+    background-color: #00fcff;
 	margin: 0px auto;
+    opacity: 0.8;
 }
 
 .amountDisplay {
@@ -93,7 +95,7 @@ div#nav_side_bar_left {
 }
 
 ul#nav_left {
-    
+
 }
 
 ul#nav_left li {
@@ -101,10 +103,12 @@ ul#nav_left li {
 }
 
 ul#nav_left li a {
+    border-radius: 10px;
+    opacity: 0.7;
     color:#000;
     display:block;
     font-size: 1.6em;
-    background-color: #c0392b;
+    background-color: #00fcff;
     padding: 10%;
     margin:12px;
     margin-top: 30px;
@@ -121,11 +125,13 @@ ul#nav_left li a {
 }
 
 ul#nav_left li a:hover {
-    background-color: #d55244;
+    opacity: 1;
+    background-color: #28eef0;
 }
 
 ul#nav_left li a:active {
-    background-color: #a63326;   
+    opacity: 1;
+    background-color: #00c0c2;   
 }
 
 .button1 {
@@ -134,8 +140,10 @@ ul#nav_left li a:active {
     height:10%;
     margin: 20px;
     position: absolute;
-    background-color: #c0392b;
+    background-color: #00fcff;
     transition: 0.1s;
+    border-radius: 10px;
+    opacity: 0.7;
     
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none;   /* Chrome/Safari/Opera */
@@ -147,11 +155,13 @@ ul#nav_left li a:active {
 }
 
 .button1:hover {
-    background-color: #d55244;
+    background-color: #28eef0;
+    opacity: 1.0
 }
 
 .button1:active {
-    background-color: #a63326;
+    background-color: #00c0c2;
+    opacity: 1.0
 }
 
 .center_text{
@@ -184,15 +194,17 @@ ul#nav_right li {
 }
 
 ul#nav_right li a {
+    border-radius: 10px;
     color:#000;
     display:block;
     font-size: 1.6em;
-    background-color: #c0392b;
+    background-color: #00fcff;
     padding: 10%;
     margin:12px;
     margin-top: 30px;
     transition: 0.1s;
     text-align: center;
+    opacity: 0.7;
     
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none;   /* Chrome/Safari/Opera */
@@ -204,11 +216,13 @@ ul#nav_right li a {
 }
 
 ul#nav_right li a:hover {
-    background-color: #d55244;
+    background-color: #28eef0;
+    opacity: 1.0;
 }
 
 ul#nav_right li a:active {
-    background-color: #a63326;   
+    background-color: #00c0c2;   
+    opacity: 1.0
 }
 
 /*END NAV_SIDE_BAR_RIGHT STYLES*/
@@ -222,6 +236,10 @@ div#dynamic {
     margin-left:310px;
     margin-right:310px;
     list-style: none;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #00c0c2;
+    border-radius: 10px;
 }
 
 /*IF YOU PUT A MARGIN IN HERE IT WILL EFFECT EVERYTHING*/
@@ -253,7 +271,8 @@ div#dynamic_list div ul li a {
 }
 
 .titleBar {
-	background-color: #c0392b;
+    border-radius: 10px;
+	background-color: #00fcff;
 	padding: 3px;
 	padding-bottom: 10px;
 	padding-top: 10px;
@@ -261,11 +280,30 @@ div#dynamic_list div ul li a {
 	margin-left: 50px;
 	margin-right: 50px;
 	font-size: 28px;
+    opacity: 0.8;
+}
+
+.titleBarSpecial {
+    border-radius: 10px;
+	background-color: #00fcff;
+	padding: 3px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	margin-left: 50px;
+	margin-right: 50px;
+	font-size: 28px;
+    opacity: 0.8;
+	
+	margin-bottom: 10px;
+	z-index: 2;
+}
+
+#dynamicJobButton {
 }
 
 #active_job_button {
     display:block;
-    background-color: #c0392b;
+    background-color: #00fcff;
     transition: 0.1s;
     font-size: 1.9em;
 	padding-top: 15%;
@@ -274,6 +312,8 @@ div#dynamic_list div ul li a {
 	padding-right: 5%;
 	margin-left: 90px;
 	margin-right: 90px;
+    border-radius: 10px;
+    opacity: 0.7;
 
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none;   /* Chrome/Safari/Opera */
@@ -286,7 +326,7 @@ div#dynamic_list div ul li a {
 
 #upgrade_job_button {
    	display:block;
-    background-color: #c0392b;
+    background-color: #00fcff;
     transition: 0.1s;
     font-size: 1.2em;
 	padding-top: 5%;
@@ -296,6 +336,8 @@ div#dynamic_list div ul li a {
 	margin: 15px;
 	margin-left: 90px;
 	margin-right: 370px;
+    border-radius: 10px;
+    opacity: 0.7;
 
     
     -webkit-touch-callout: none; /* iOS Safari */
@@ -308,11 +350,13 @@ div#dynamic_list div ul li a {
 }
 
 #display1 ul li a:hover{
-    background-color: #d55244;  
+    background-color: #28eef0;  
+    opacity: 1.0;
 }
 
 #display1 ul li a:active {
-    background-color: #a63326;  
+    background-color: #00c0c2; 
+    opacity: 1.0;
 }
 
     /*END DISPLAY1*/
@@ -379,18 +423,20 @@ div#dynamic_list div ul li a {
 
 #company0 {
 	margin-top: 0%;
+    margin-left: 10px;
 }
 
 #company1 {
-	margin-top: 15%;
+	margin-top: 14%;
+    margin-left: 10px;
 }
 
 #company2 {
-	margin-top: 28%;
+	margin-top: 24%;
 }
 
 #company3 {
-	margin-top: 24%;
+	margin-top: 20%;
 }
 
 .button {
@@ -515,9 +561,45 @@ div#dynamic_list div ul li a {
 	position: absolute;    
 	width: 10%;     
 	height: 100%;
-	background-color: blue; 
+	background-color: #00fcff; 
 }
     /*END DISPLAY2*/
+
+    /*DISPLAY3*/
+    /*END OF DISPLAY3*/
+
+    /*DISPLAY4*/
+#reset_button {
+   	display:block;
+    background-color: #00fcff;
+    transition: 0.1s;
+    font-size: 1.2em;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	padding-left: 5%;
+	padding-right: 5%;
+	margin: 15px;
+	margin-left: 110px;
+	margin-right: 110px;
+
+    
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* IE/Edge */
+    user-select: none;           /* non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+#display4 ul li a:hover{
+    background-color: #28eef0;  
+}
+
+#display4 ul li a:active {
+    background-color: #00c0c2;  
+}
+    /*END OF DISPLAY4*/
 
 /*END DYNAMIC STYLES*/
 
@@ -528,10 +610,12 @@ div#dynamic_list div ul li a {
 div#footer{
     width: 100%;
 	height: 30px;
-	background-color: #808080;
+	background-color: #252525;
 	margin: 0px auto;
     position: fixed;
+    color: #fff;
     bottom: 0;
+    opacity: 0.9;
 }
 
 .copywrite{
