@@ -89,7 +89,9 @@ window.onload = function()
     
     //load the save if needed
     if(shouldSave)
+	{
         loadSave();
+	}
 	
 	//initialize the companies
 	for(var i = 0; i < companies.length; i++)
