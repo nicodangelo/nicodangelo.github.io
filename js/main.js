@@ -69,6 +69,7 @@ var company_progress = [
 window.onload = function()
 {
     localStorage.clear();
+	save();
     
     //initialize variables
     currentJob = 0;
