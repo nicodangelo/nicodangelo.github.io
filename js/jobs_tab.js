@@ -52,7 +52,7 @@ function onLoad()
 
 function CreateRing()
 {
-	if(currentJob < 60)
+	if(currentJob < 35)
 	{
 		if(Money.money >= 50.00)
 		{
