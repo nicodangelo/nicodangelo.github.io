@@ -13,48 +13,51 @@
 
 //VARIABLES AND ARRAYS
 ////////////////////////////////////////////////--1--//////////////////////////////////////////////
-var money;
 var past;
 var speed;
 var interval;
 var ups;
 var moneyDisplay;
-var upgradeJobButton;
-var jobButton;
-var currentJob;
 var shouldSave = true;
 var navIndex = 1;
 var width = 0;
 var loaded = false;
 var offlineMoney = 14400000;
-var canvasButton;
-
-var jobs = [
-    /*0*/new Job("Candy Sales", 0, 0.25, null, true),
-    /*1*/new Job("Hot dog sales", 50.00, 1.00, null, true),
-    /*2*/new Job("Burger Flipper", 150.00, 2.75, null, true),
-    /*3*/new Job("Grocery Bagger", 270.00, 3.26, null, true),
-    /*4*/new Job("Laborer", 420, 5.50, null, true),
-    /*5*/new Job("Teacher", 690.00, 8.00, null, true),
-    /*6*/new Job("Dentist", 800.63, 10.00, null, true),
-    /*7*/new Job("Programmer", 1234.56, 12.75, null, true),
-    /*8*/new Job("Project Leader", 2580.69, 15.00, null, true),
-    /*9*/new Job("Manager", 5000.00, 20.00, null, true),
-    /*10*/new Job("CEO", 12000.12, 33.33, null, true),
-    /*11*/new Job("Owner and Founder", 20000.00, 50.00, null, true),
-    /*12*/new Job("Mom", 245000.00, 69.00, null, true)  
-];
 
 var companies = [
-           //Company(name, owned, time,  price, inc)
-	/*0*/new Company("Candy Store", 0, 2000, 2.00, 0.25, null),
-	/*1*/new Company("Hot Dog Stand", 0, 5000, 10.00, 1.00, null)
+           //Company(name, owned, price,  inc, inflation, time, past)
+	/*0*/new Company("Candy Store", 0, 4, 0.25, 1.06, 2000, null),
+	/*1*/new Company("Hot Dog Stand",0, 70, 1.00, 1.14, 3000, null)
 ];
 
 var company_progress = [
     /*0*/0, 
     /*1*/0
 	];
+
+var save_companies = [
+           //Company(name, owned, price,  inc, inflation, time, past)
+	/*0*/new Company("Candy Store", 0, 4, 0.25, 1.06, 2000, null),
+	/*1*/new Company("Hot Dog Stand",0, 70, 1.00, 1.14, 3000, null)
+];
+
+/*function disable()
+{
+    try {
+        var $_console$$ = console;
+        Object.defineProperty(window, "console", {
+            get: function() {
+                if ($_console$$._commandLineAPI)
+                    throw "Sorry, for security reasons, the script console is deactivated on stockpiler.website";
+                return $_console$$
+            },
+            set: function($val$$) {
+                $_console$$ = $val$$
+            }
+        })
+    } catch ($ignore$$) {
+    }
+}*/
 	
 	
 	
@@ -67,13 +70,10 @@ var company_progress = [
 //START OF THE GAME AND MAIN LOOP
 ////////////////////////////////////////////////--2--//////////////////////////////////////////////
 window.onload = function()
-{
-    //localStorage.clear();
-	//save();
-    
+{   
     //initialize variables
     currentJob = 0;
-    money = 0.0;
+    Money.money = 0.0;
 	past = new Date().getTime();
 	speed = 0;
 	ups = 40;
@@ -81,17 +81,12 @@ window.onload = function()
     clickmeNav(1);
     
     moneyDisplay = document.getElementById('amount_display');
-    upgradeJobButton = document.getElementById('upgrade_job_button');
-    jobButton = document.getElementById('active_job_button'); 
-	canvasButton = document.getElementById('dynamicJobButton');
-	canvasButton.height = 450;
-	canvasButton.width = 700;
+    
+    onLoad();
     
     //load the save if needed
     if(shouldSave)
-	{
         loadSave();
-	}
 	
 	//initialize the companies
 	for(var i = 0; i < companies.length; i++)
@@ -113,6 +108,8 @@ setInterval(function(){
 		var elapsedTime = now - past;
         update(elapsedTime, now);
 		past = new Date().getTime();
+        if(navIndex === 1)
+            render();
 	}
 }, 25);
 
@@ -129,14 +126,8 @@ setInterval(function(){
 function update(elapsedTime, now)
 {
     updateInfoBar();
-    //updateJobs();
 	updateCompanies(elapsedTime, now);
     updateUpgrades();
-	
-	if(navIndex === 1)
-	{
-		renderJobButton();
-	}
     
     if(shouldSave)
         save();
@@ -144,21 +135,7 @@ function update(elapsedTime, now)
 
 function updateInfoBar()
 {
-    moneyDisplay.innerHTML = "$" + fixNumber(money, 2);
-}
-
-function updateJobs()
-{
-    var newInc =  jobs[currentJob].inc.toFixed(2);
-    jobButton.innerHTML = jobs[currentJob].name + " + $" + newInc;
-    if(currentJob + 1 < jobs.length)
-    {
-        var tempPrice = jobs[currentJob + 1].price.toFixed(2); 
-        if(currentJob > 0)
-            upgradeJobButton.innerHTML = "lv. " + currentJob + " Upgrade Job: $" + tempPrice;
-        else
-            upgradeJobButton.innerHTML = " Upgrade Job: $" + tempPrice;
-    }
+    moneyDisplay.innerHTML = "$" + fixNumber(Money.money, 2);
 }
 
 function updateCompanies(elapsedTime, now)
@@ -167,6 +144,16 @@ function updateCompanies(elapsedTime, now)
 	{
 		//The owned Amount
 		$("#owned" + i).text(companies[i].owned);
+        
+        //The perchaseButton(ie. show if it can be clicked or not)
+        if(Money.money < companies[i].price)
+        {
+            $("#companyButton" + i).css("background-color", "#929292");
+        }
+        else
+        {   if($("#companyButton" + i).css("background-color") !== "#EEEEEE")
+                $("#companyButton" + i).css("background-color", "#EEEEEE");
+        }
 		
 		//The progress bar
 		if(companies[i].owned > 0)
@@ -223,21 +210,7 @@ function updateUpgrades()
 ////////////////////////////////////////////////--4--//////////////////////////////////////////////
 function clickme(index)
 {
-	switch(index)
-	{
-		case 1: gainmoney(jobs[currentJob].inc); break;
-		case 2: 
-            if(currentJob < jobs.length)
-            {
-                if(money >= jobs[currentJob + 1].price)
-                {
-                    money = money - jobs[currentJob + 1].price;
-                    currentJob++;
-                    //should increment count here but there is only one job so far...
-                }  
-            }
-			break;
-	}
+
 }
 
 function clickmeNav(index)
@@ -247,7 +220,7 @@ function clickmeNav(index)
         index = 1;
 	}
     for(var i = 1; i <= 8; i++)
-    {
+    {   
         $("#display" + i).css("display", "none");
         $("#display" + index).css("display", "block");
         navIndex = index;
@@ -256,42 +229,14 @@ function clickmeNav(index)
 
 function clickmePerchaseCompany(index)
 {
-	if(money >= companies[index].price)
+	if(Money.money >= companies[index].price)
 	{
-		money = money - companies[index].price;
-		companies[index].owned += 1;
+		Money.money = Money.money - companies[index].price;
+		companies[index].owned = (companies[index].owned + 1);
         if(companies[index].owned > 1)
         {
-            if(companies[index].owned % 100 === 0)
-            {
-                companies[index].inc += Math.sqrt(companies[index].inc) * 2;
-                companies[index].price += companies[index].price * 5;
-            }
-            else
-            {
-                if(companies[index].owned % 30 === 0)
-                {
-                    companies[index].inc += Math.sqrt(companies[index].inc);
-                    companies[index].price += (Math.sqrt(companies[index].price) * 18);
-                }
-                else
-                {
-                    if((companies[index].inc + Math.sqrt(companies[index].inc)) >= companies[index].price)
-                    {
-                        companies[index].inc += Math.sqrt(companies[index].inc);
-                        companies[index].price += (Math.sqrt(companies[index].price) * 10);
-                    }
-                    else
-                    {
-                        companies[index].inc += Math.sqrt(companies[index].inc);
-                        companies[index].price += (Math.sqrt(companies[index].price) * 3);
-                    }
-                }
-            }
-        }
-        else
-        {
-              companies[index].price += (Math.sqrt(companies[index].price) - 1);
+            companies[index].inc = (companies[index].inc * companies[index].inflation);
+            companies[index].price = (companies[index].price * companies[index].inflation);
         }
         
 		$("#notPerchased" + index).css("display", "none");
@@ -349,33 +294,7 @@ function numberWithCommas(n)
 //function to add money to the user(later will also keep track of the total earned and so on)
 function gainmoney(amount)
 {
-    money += amount;
-}
-
-function renderJobButton()
-{
-	var ctx = canvasButton.getContext('2d');
-	//get Variables
-	var now = new Date();
-	var seconds = now.getSeconds();
-	var milliseconds = now.getMilliseconds();
-	var newSeconds = seconds + (milliseconds / 1000);
-	//set attributes
-	ctx.fillStyle = "rgba(0,0,0, 0)";
-	ctx.strokeStyle = 'rgba(40,209,250, 1)';
-	ctx.lineWidth = 15;
-	ctx.shadowBlur = 20;
-	ctx.shadowColor = '28d1fa';
-	//clear the rect
-	ctx.clearRect(0,0,700,450);
-	//draw new elements
-	ctx.beginPath();
-	ctx.arc(350, 225, 100, degToRad(270), degToRad((newSeconds*6)-90));
-    ctx.stroke();
-	//draw the text
-	ctx.font = '25px Arial';
-    ctx.fillStyle = '28d1fa';
-    ctx.fillText(seconds, 335, 230);
+    Money.money += amount;
 }
 
 function degToRad(degree)
@@ -395,6 +314,12 @@ function degToRad(degree)
 //OBJECT FUNCTIONS
 ////////////////////////////////////////////////--6--//////////////////////////////////////////////
 
+//The Money
+function Money(amount)
+{
+    this.money = amount;    
+}
+
 //The job object
 function Job(name, price, inc, inflation, current)
 {
@@ -407,19 +332,16 @@ function Job(name, price, inc, inflation, current)
 
 //The company Object
 /*
-    @param name : the name of the company.
-    @param owned : boolean for if the company is owned or not.
-    @param time : the time in millis it takes for that company to produce money.
-    @param price : the price of the next tier of company.
-    @param inc : how much money that company makes per the speed.
+    
 */
-function Company(name, owned, time,  price, inc, past)
+function Company(name, owned, price,  inc, inflation, time, past)
 {
 	this.name = name;
 	this.owned = owned;
-    this.time = time;
 	this.price = price;
 	this.inc = inc;
+    this.inflation = inflation;
+    this.time = time;
     this.past = past;
 }
 
@@ -446,7 +368,7 @@ function Upgrade(name, text, price)
 
 function save()
 {
-    setItem("money", money);
+    setItem("money", Money.money);
     setItem("currentJob", currentJob);
     setItem("past", past);
     
@@ -460,7 +382,7 @@ function loadSave()
     if(getItem("currentJob") !== null)
 	   currentJob = Number(getItem("currentJob"));
     if(getItem("money") !== null)
-	   money = Number(getItem("money"));
+	   Money.money = Number(getItem("money"));
     if(getItem("past") !== null)
        past = getItem("past");
     
@@ -484,34 +406,24 @@ function getItem(key)
 
 function resetGame()
 {
+    shouldSave = false;
     localStorage.clear();
-	save();
-	
-    money = 0;
+
+    Money.money = 0.0;
     currentJob = 0;
-    save();
 	
 	for(var x = 0; x < company_progress.length; x++)
 	{
 		company_progress[x] = 0;
 	}
-	save();
+    
+    for(var i = 0; i < companies.length; i++)
+    {
+        companies[i] = save_companies[i];
+    }
 	
-	for(x = 0; x < companies.length; x++)
-	{
-		companies[x].owned = 0;	
-		this.name = name;
-		this.owned = owned;
-    	this.time = time;
-		this.price = price;
-		this.inc = inc;
-    	this.past = past;
-	}
-	save();
-	
-	loadSave();
-
-    //window.location='index.html';
+    save();
+    window.location='index.html';
 }
 
 

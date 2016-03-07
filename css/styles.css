@@ -9,6 +9,14 @@
 	padding: 0px;
 	border: 0px;
     box-sizing: border-box;
+    
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* IE/Edge */
+    user-select: none;           /* non-prefixed version, currently
+                                  not supported by any browser */
 }
 
 body, html {
@@ -114,14 +122,6 @@ ul#nav_left li a {
     margin-top: 30px;
     transition: 0.1s;
     text-align: center;
-    
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* IE/Edge */
-    user-select: none;           /* non-prefixed version, currently
-                                  not supported by any browser */
 }
 
 ul#nav_left li a:hover {
@@ -144,14 +144,6 @@ ul#nav_left li a:active {
     transition: 0.1s;
     border-radius: 10px;
     opacity: 0.7;
-    
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* IE/Edge */
-    user-select: none;           /* non-prefixed version, currently
-                                  not supported by any browser */
 }
 
 .button1:hover {
@@ -205,14 +197,6 @@ ul#nav_right li a {
     transition: 0.1s;
     text-align: center;
     opacity: 0.7;
-    
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* IE/Edge */
-    user-select: none;           /* non-prefixed version, currently
-                                  not supported by any browser */
 }
 
 ul#nav_right li a:hover {
@@ -314,14 +298,6 @@ div#dynamic_list div ul li a {
 	margin-right: 90px;
     border-radius: 10px;
     opacity: 0.7;
-
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* IE/Edge */
-    user-select: none;           /* non-prefixed version, currently
-                                  not supported by any browser */
 }
 
 #upgrade_job_button {
@@ -338,15 +314,6 @@ div#dynamic_list div ul li a {
 	margin-right: 370px;
     border-radius: 10px;
     opacity: 0.7;
-
-    
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* IE/Edge */
-    user-select: none;           /* non-prefixed version, currently
-                                  not supported by any browser */
 }
 
 #display1 ul li a:hover{
@@ -380,14 +347,6 @@ div#dynamic_list div ul li a {
 	height: 70px;
     background-color: #3E3E3E;
 	z-index: 5;
-	
-	-webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* IE/Edge */
-    user-select: none;           /* non-prefixed version, currently
-                                  not supported by any browser */
 }
 
 .notPerchased:hover { background-color: #232323; }
@@ -398,46 +357,27 @@ div#dynamic_list div ul li a {
 	margin-left: -5px;
 	margin-top: 12px;
 	color: white;
-	
-	-webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* IE/Edge */
-    user-select: none;           /* non-prefixed version, currently
-                                  not supported by any browser */
 }
 
 .perchacePrice {
 	color: white;
 	margin-top: 5px;
-	
-	-webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* IE/Edge */
-    user-select: none;           /* non-prefixed version, currently
-                                  not supported by any browser */
 }
 
 #company0 {
-	margin-top: 0%;
+	margin-top: 0px;
     margin-left: 10px;
 }
+#companyButton0 { background-color: #EEEEEE;}
+
 
 #company1 {
-	margin-top: 14%;
+	margin-top: 120px;
     margin-left: 10px;
+    background-color: #EEEEEE;
 }
+#companyButton1 { background-color: #EEEEEE;}
 
-#company2 {
-	margin-top: 24%;
-}
-
-#company3 {
-	margin-top: 20%;
-}
 
 .button {
 	position: absolute;
@@ -446,23 +386,12 @@ div#dynamic_list div ul li a {
 	bottom: 10px;
 	width: 60px;
 	height: 60px;
-	background-color: #EEEEEE;
+    border-radius: 5px;
+	/*background-color: #EEEEEE;*/
 	z-index: 2;
 	box-shadow: 0 0 5px 2px rgba(0,0,0,.35);	
 	transition: 0.1s; 
-	
-	-webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* IE/Edge */
-    user-select: none;           /* non-prefixed version, currently
-                                  not supported by any browser */
-	}
-	
-.button:hover { background-color: #DDDDDD; }
-
-.button:active { background-color: #BBBBBB; }
+}
 
 .running {
 	position: absolute;
@@ -493,14 +422,6 @@ div#dynamic_list div ul li a {
 	bottom: 32px;
 	height: 28px;
 	background-color: #353535;
-	
-	-webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* IE/Edge */
-    user-select: none;           /* non-prefixed version, currently
-                                  not supported by any browser */
 }
 
 .containerBar{
@@ -561,7 +482,7 @@ div#dynamic_list div ul li a {
 	position: absolute;    
 	width: 10%;     
 	height: 100%;
-	background-color: #00fcff; 
+	background-color: #00ff0c; 
 }
     /*END DISPLAY2*/
 
@@ -581,15 +502,6 @@ div#dynamic_list div ul li a {
 	margin: 15px;
 	margin-left: 110px;
 	margin-right: 110px;
-
-    
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* IE/Edge */
-    user-select: none;           /* non-prefixed version, currently
-                                  not supported by any browser */
 }
 
 #display4 ul li a:hover{
