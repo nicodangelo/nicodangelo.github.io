@@ -6,21 +6,21 @@ var HEIGHT;
 var rings;
 var shouldRenderRings = false;
 
-var jobs = [
-    /*0*/new Job("Candy Sales", 0, 0.25, null, true),
-    /*1*/new Job("Hot dog sales", 50.00, 1.00, null, true),
-    /*2*/new Job("Burger Flipper", 150.00, 2.75, null, true),
-    /*3*/new Job("Grocery Bagger", 270.00, 3.26, null, true),
-    /*4*/new Job("Laborer", 420, 5.50, null, true),
-    /*5*/new Job("Teacher", 690.00, 8.00, null, true),
-    /*6*/new Job("Dentist", 800.63, 10.00, null, true),
-    /*7*/new Job("Programmer", 1234.56, 12.75, null, true),
-    /*8*/new Job("Project Leader", 2580.69, 15.00, null, true),
-    /*9*/new Job("Manager", 5000.00, 20.00, null, true),
-    /*10*/new Job("CEO", 12000.12, 33.33, null, true),
-    /*11*/new Job("Owner and Founder", 20000.00, 50.00, null, true),
-    /*12*/new Job("Mom", 245000.00, 69.00, null, true)  
-];
+/*var jobs = [
+    new Job("Candy Sales", 0, 0.25, null, true),
+    new Job("Hot dog sales", 50.00, 1.00, null, true),
+    new Job("Burger Flipper", 150.00, 2.75, null, true),
+    new Job("Grocery Bagger", 270.00, 3.26, null, true),
+    new Job("Laborer", 420, 5.50, null, true),
+    new Job("Teacher", 690.00, 8.00, null, true),
+    new Job("Dentist", 800.63, 10.00, null, true),
+    new Job("Programmer", 1234.56, 12.75, null, true),
+    new Job("Project Leader", 2580.69, 15.00, null, true),
+    new Job("Manager", 5000.00, 20.00, null, true),
+    new Job("CEO", 12000.12, 33.33, null, true),
+    new Job("Owner and Founder", 20000.00, 50.00, null, true),
+    new Job("Mom", 245000.00, 69.00, null, true)  
+];*/
 
 function onLoad()
 {
