@@ -58,22 +58,25 @@ function onLoad()
 
 function CreateRing()
 {
-	if(Money.money >= 50.00)
+	if(currentJob < 60)
 	{
-		Money.money = Money.money - 50.00;
-		var start = Math.floor((Math.random() * 360));
-		var stop = Math.floor((Math.random() * 360) + start);
-		var thickness = Math.floor((Math.random() * 40) + 1);
-		var inc = Math.floor((Math.random()) * 5 + 1);
-		var fromLast = Math.floor((Math.random() * currentJob) + 20);
-		var halfHeight = HEIGHT / 2;
-		var fromCenter = Math.abs(Math.floor((Math.random() * halfHeight - thickness))); 
-		var opacity = Math.abs(Math.random() * 1);
-		var direction = Math.floor(Math.random() * 2);
-		var ring = new Ring(start, stop, thickness, inc, fromCenter, opacity, direction);
-		rings.push(ring);
-		console.log(fromCenter);
-		currentJob++;
+		if(Money.money >= 50.00)
+		{
+			Money.money = Money.money - 50.00;
+			var start = Math.floor((Math.random() * 360));
+			var stop = Math.floor((Math.random() * 360) + start);
+			var thickness = Math.floor((Math.random() * 40) + 1);
+			var inc = Math.floor((Math.random()) * 5 + 1);
+			var fromLast = Math.floor((Math.random() * currentJob) + 20);
+			var halfHeight = HEIGHT / 2;
+			var fromCenter = Math.abs(Math.floor((Math.random() * halfHeight - thickness))); 
+			var opacity = Math.abs(Math.random() * 1);
+			var direction = Math.floor(Math.random() * 2);
+			var ring = new Ring(start, stop, thickness, inc, fromCenter, opacity, direction);
+			rings.push(ring);
+			console.log(fromCenter);
+			currentJob++;
+		}
 	}
 	gainmoney(1.00);
     
