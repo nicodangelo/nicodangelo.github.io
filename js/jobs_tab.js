@@ -56,7 +56,7 @@ function CreateRing()
 	{
 		if(Money.money >= 50.00)
 		{
-			Money.money = Money.money - 50.00;
+			//Money.money = Money.money - 50.00;
 			var start = Math.floor((Math.random() * 360));
 			var stop = Math.floor((Math.random() * 360) + start);
 			var thickness = Math.floor((Math.random() * 40) + 1);
