@@ -181,8 +181,8 @@ function updateCompanies(elapsedTime, now)
 			//the name and perchase amount
 			$("#owned" + i).text(companies[i].owned);
 			$("#name" + i).text(companies[i].name);
-			$("#cost" + i).text("$" + (companies[i].price).toFixed(2));
-			$("#inc" + i).text("$" + (companies[i].inc).toFixed(2));
+			$("#cost" + i).text("$" + fixNumber(companies[i].price,2));
+			$("#inc" + i).text("$" + fixNumber(companies[i].inc,2));
             
             //for gaining the money
             var delta = now - companies[i].past;
