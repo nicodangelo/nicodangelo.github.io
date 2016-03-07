@@ -79,6 +79,12 @@ window.onload = function()
 	ups = 40;
 	interval = 1000/ups;
     clickmeNav(1);
+	currentJob = 0;
+	
+	rings = [
+        new Ring(0, 270, 15, .5, 30, 1, 0),
+        new Ring(0, 360, 4, 0, HEIGHT / 2 - 10, 1, 0)
+    	];
     
     moneyDisplay = document.getElementById('amount_display');
     
@@ -375,6 +381,7 @@ function save()
     localStorage.setItem("jobs", JSON.stringify(jobs));
     localStorage.setItem("companies", JSON.stringify(companies));
     localStorage.setItem("company_progress", JSON.stringify(company_progress));
+	localStorage.setItem("rings", JSON.stringify(rings));
 }
 
 function loadSave()
@@ -392,6 +399,8 @@ function loadSave()
         companies = JSON.parse(localStorage.getItem("companies"));
     if(JSON.parse(localStorage.getItem("company_progress")) !== null)
         company_progress = JSON.parse(localStorage.getItem("company_progress"));
+	if(JSON.parse(localStorage.getItem("rings")) != null)
+		rings = JSON.parse(localStorage.getItem("rings");
 }
 
 function setItem(key, variable)
@@ -408,6 +417,7 @@ function resetGame()
 {
     shouldSave = false;
     localStorage.clear();
+	rings = null;
 
     Money.money = 0.0;
     currentJob = 0;

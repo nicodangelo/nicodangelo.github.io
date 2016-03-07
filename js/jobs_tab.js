@@ -39,13 +39,7 @@ function onLoad()
     WIDTH = canvasButton.width;
     HEIGHT = canvasButton.height;
     
-    rings = [
-        new Ring(0, 270, 15, .5, 30, 1, 0),
-        new Ring(0, 360, 4, 0, HEIGHT / 2 - 10, 1, 0)
-    ];
-    
     ctx = canvasButton.getContext('2d');
-    currentJob = 0;
     
     //load the styles for everything
     ctx.fillStyle = "rgba(0,0,0, 0)";
