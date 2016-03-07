@@ -27,18 +27,21 @@ var offlineMoney = 14400000;
 var companies = [
            //Company(name, owned, price,  inc, inflation, time, past)
 	/*0*/new Company("Candy Store", 0, 4, 0.25, 1.06, 2000, null),
-	/*1*/new Company("Hot Dog Stand",0, 70, 1.00, 1.14, 3000, null)
+	/*1*/new Company("Hot Dog Stand",0, 70, 1.00, 1.14, 3000, null),
+	/*2*/new Company("Diner", 0, 325, 35.00, 1.17, 6000, null)
 ];
 
 var company_progress = [
     /*0*/0, 
-    /*1*/0
+    /*1*/0,
+	/*2*/0
 	];
 
 var save_companies = [
            //Company(name, owned, price,  inc, inflation, time, past)
 	/*0*/new Company("Candy Store", 0, 4, 0.25, 1.06, 2000, null),
-	/*1*/new Company("Hot Dog Stand",0, 70, 1.00, 1.14, 3000, null)
+	/*1*/new Company("Hot Dog Stand",0, 70, 1.00, 1.14, 3000, null),
+	/*2*/new Company("Diner", 0, 325, 35.00, 1.17, 6000, null)
 ];
 
 /*function disable()
