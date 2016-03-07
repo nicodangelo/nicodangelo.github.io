@@ -417,7 +417,10 @@ function resetGame()
 {
     shouldSave = false;
     localStorage.clear();
-	rings = null;
+	rings = [
+        new Ring(0, 270, 15, 0.5, 30, 1, 0),
+        new Ring(0, 360, 4, 0, HEIGHT / 2 - 10, 1, 0)
+    	];
 
     Money.money = 0.0;
     currentJob = 0;
