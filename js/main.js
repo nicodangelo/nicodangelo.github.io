@@ -400,7 +400,7 @@ function loadSave()
     if(JSON.parse(localStorage.getItem("company_progress")) !== null)
         company_progress = JSON.parse(localStorage.getItem("company_progress"));
 	if(JSON.parse(localStorage.getItem("rings")) != null)
-		rings = JSON.parse(localStorage.getItem("rings");
+		rings = JSON.parse(localStorage.getItem("rings"));
 }
 
 function setItem(key, variable)
