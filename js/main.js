@@ -381,7 +381,7 @@ function save()
     setItem("currentJob", currentJob);
     setItem("past", past);
     
-    localStorage.setItem("jobs", JSON.stringify(jobs));
+    //localStorage.setItem("jobs", JSON.stringify(jobs));
     localStorage.setItem("companies", JSON.stringify(companies));
     localStorage.setItem("company_progress", JSON.stringify(company_progress));
 	localStorage.setItem("rings", JSON.stringify(rings));
@@ -396,8 +396,8 @@ function loadSave()
     if(getItem("past") !== null)
        past = getItem("past");
     
-    if(JSON.parse(localStorage.getItem("jobs")) !== null)
-        jobs = JSON.parse(localStorage.getItem("jobs"));
+    //if(JSON.parse(localStorage.getItem("jobs")) !== null)
+        //jobs = JSON.parse(localStorage.getItem("jobs"));
     if(JSON.parse(localStorage.getItem("companies")) !== null)
         companies = JSON.parse(localStorage.getItem("companies"));
     if(JSON.parse(localStorage.getItem("company_progress")) !== null)
