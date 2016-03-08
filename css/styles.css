@@ -378,6 +378,13 @@ div#dynamic_list div ul li a {
 }
 #companyButton1 { background-color: #EEEEEE;}
 
+#company2 {
+	margin-top: 240px;
+    margin-left: 10px;
+    background-color: #EEEEEE;
+}
+#companyButton2 { background-color: #EEEEEE;}
+
 
 .button {
 	position: absolute;
