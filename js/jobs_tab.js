@@ -1,6 +1,6 @@
 var canvasButton;
 var ctx;
-var cuurentJob;
+var currentJob;
 var WIDTH;
 var HEIGHT;
 var rings;
