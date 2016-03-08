@@ -381,7 +381,6 @@ function save()
     setItem("currentJob", currentJob);
     setItem("past", past);
     
-    //localStorage.setItem("jobs", JSON.stringify(jobs));
     localStorage.setItem("companies", JSON.stringify(companies));
     localStorage.setItem("company_progress", JSON.stringify(company_progress));
 	localStorage.setItem("rings", JSON.stringify(rings));
