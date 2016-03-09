@@ -1,10 +1,16 @@
+"use strict";
+
 var canvasButton;
 var ctx;
 var currentJob;
 var WIDTH;
 var HEIGHT;
-var rings;
 var shouldRenderRings = false;
+
+var rings = [
+	new Ring(0, 270, 15, 0.5, 30, 1, 0),
+	new Ring(0, 360, 4, 0, HEIGHT / 2 - 10, 1, 0)
+	];
 
 /*var jobs = [
     new Job("Candy Sales", 0, 0.25, null, true),
@@ -64,7 +70,10 @@ function CreateRing()
 			var fromLast = Math.floor((Math.random() * currentJob) + 20);
 			var halfHeight = HEIGHT / 2;
 			var fromCenter = Math.abs(Math.floor((Math.random() * halfHeight - thickness))); 
-			var opacity = Math.abs(Math.random() * 1);
+			var opacity = Math.random();
+			if(opacity >= .95)
+				opacity = 1;
+			console.log(opacity);
 			var direction = Math.floor(Math.random() * 2);
 			var ring = new Ring(start, stop, thickness, inc, fromCenter, opacity, direction);
 			rings.push(ring);

@@ -44,32 +44,11 @@ var save_companies = [
 	/*2*/new Company("Diner", 0, 325.00, 35.00, 1.17, 6000, null)
 ];
 
-/*function disable()
-{
-    try {
-        var $_console$$ = console;
-        Object.defineProperty(window, "console", {
-            get: function() {
-                if ($_console$$._commandLineAPI)
-                    throw "Sorry, for security reasons, the script console is deactivated on stockpiler.website";
-                return $_console$$
-            },
-            set: function($val$$) {
-                $_console$$ = $val$$
-            }
-        })
-    } catch ($ignore$$) {
-    }
-}*/
 	
 	
 	
 	
 	
-	
-	
-	
-
 //START OF THE GAME AND MAIN LOOP
 ////////////////////////////////////////////////--2--//////////////////////////////////////////////
 window.onload = function()
@@ -83,11 +62,6 @@ window.onload = function()
 	interval = 1000/ups;
     clickmeNav(1);
 	currentJob = 0;
-	
-	rings = [
-        new Ring(0, 270, 15, .5, 30, 1, 0),
-        new Ring(0, 360, 4, 0, HEIGHT / 2 - 10, 1, 0)
-    	];
     
     moneyDisplay = document.getElementById('amount_display');
     
@@ -395,8 +369,6 @@ function loadSave()
     if(getItem("past") !== null)
        past = getItem("past");
     
-    //if(JSON.parse(localStorage.getItem("jobs")) !== null)
-        //jobs = JSON.parse(localStorage.getItem("jobs"));
     if(JSON.parse(localStorage.getItem("companies")) !== null)
         companies = JSON.parse(localStorage.getItem("companies"));
     if(JSON.parse(localStorage.getItem("company_progress")) !== null)
