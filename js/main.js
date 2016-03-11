@@ -23,6 +23,7 @@ var navIndex = 1;
 var width = 0;
 var loaded = false;
 var offlineMoney = 14400000;
+var achieveAmount = 25;
 
 var companies = [
            //Company(name, owned, price,  inc, inflation, time, past)
@@ -54,6 +55,7 @@ var save_companies = [
 window.onload = function()
 {   
     //initialize variables
+    onLoad();
     currentJob = 0;
     Money.money = 0.0;
 	past = new Date().getTime();
@@ -64,8 +66,6 @@ window.onload = function()
 	currentJob = 0;
     
     moneyDisplay = document.getElementById('amount_display');
-    
-    onLoad();
     
     //load the save if needed
     if(shouldSave)
@@ -114,6 +114,8 @@ function update(elapsedTime, now)
     
     if(shouldSave)
         save();
+    else
+        localStorage.clear();
 }
 
 function updateInfoBar()
@@ -225,12 +227,19 @@ function clickmePerchaseCompany(index)
 		$("#notPerchased" + index).css("display", "none");
 		
         //actually should be in the achievements category or the upgrades category
-		if(companies[index].owned % 25 === 0)
-		{
-			companies[index].time = companies[index].time / 2;
-		}
+		var countCompanies = 0;
+        for(var h = 0; h < companies.length; h++)
+        {
+			if(companies[h].owned >= achieveAmount)
+            	countCompanies++;
+        }
+        if(countCompanies >= companies.length)
+        {
+            cutTimeHalf();
+        }
 	}
 }
+
 
 
 
@@ -284,6 +293,15 @@ function degToRad(degree)
 {
     var factor = Math.PI / 180;
     return degree*factor;
+}
+
+function cutTimeHalf()
+{
+    for(var l = 0; l < company_progress.length; l++)
+    {
+        companies[l].time = companies[l].time / 2;
+    }
+	achieveAmount = achieveAmount * 2;
 }
 
 
@@ -354,6 +372,7 @@ function save()
     setItem("money", Money.money);
     setItem("currentJob", currentJob);
     setItem("past", past);
+    setItem("achieveAmount", achieveAmount);
     
     localStorage.setItem("companies", JSON.stringify(companies));
     localStorage.setItem("company_progress", JSON.stringify(company_progress));
@@ -368,6 +387,8 @@ function loadSave()
 	   Money.money = Number(getItem("money"));
     if(getItem("past") !== null)
        past = getItem("past");
+    if(getItem("achieveAmount") !== null)
+        achieveAmount = getItem("achieveAmount");
     
     if(JSON.parse(localStorage.getItem("companies")) !== null)
         companies = JSON.parse(localStorage.getItem("companies"));
@@ -391,13 +412,13 @@ function resetGame()
 {
     shouldSave = false;
     localStorage.clear();
-	rings = [
-        new Ring(0, 270, 15, 0.5, 30, 1, 0),
-        new Ring(0, 360, 4, 0, HEIGHT / 2 - 10, 1, 0)
-    	];
-
+    
+    achieveAmount = 0;
     Money.money = 0.0;
     currentJob = 0;
+    
+	rings.splice(0,rings.length);
+    rings.push(new Ring(0, 270, 15, 0.5, 30, 1, 0));
 	
 	for(var x = 0; x < company_progress.length; x++)
 	{

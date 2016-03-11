@@ -228,7 +228,7 @@ div#dynamic {
 
 /*IF YOU PUT A MARGIN IN HERE IT WILL EFFECT EVERYTHING*/
 div#dynamic_list {
-    min-height:400px;
+    min-height:150px;
     list-style: none;
 }
 

@@ -1,0 +1,59 @@
+::-webkit-scrollbar {
+    width: 12px;
+    opacity: 0.5;
+}
+
+::-webkit-scrollbar-track {
+    background-color:  rgba(0, 0, 0, 0.4);
+    
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(20, 20, 20, 0.9);
+    opacity: 0.7
+}
+
+/*::-webkit-scrollbar-tumb:hover {
+    background-color: rgba(100, 100, 100, 0.9);
+    opacity: 1;
+}*/
+
+#display3 {
+    
+}
+
+#upgradeList {
+    margin-left: 20%;
+    height: 450px;
+    width: 60%;
+    overflow: auto;
+    border-style: solid;
+    border-width: 6px;
+    border-color: rgba(0,0,0,.6);
+    background-color: rgba(0,0,0,.5);
+    margin-bottom: 20px;
+}
+
+#upgradeList li a{
+    border-radius: 8px;
+    color:#000;
+    display:block;
+    font-size: 1.2em;
+    background-color: #00fcff;
+    padding: 5%;
+    margin:20px;
+    margin-top: 5px;
+    transition: 0.1s;
+    text-align: center;
+    opacity: 0.8;
+}
+
+#upgradeList li a:hover {
+    background-color: #28eef0;
+    opacity: 1.0;
+}
+
+#upgradeList li a:active {
+    background-color: #00c0c2;   
+    opacity: 1.0
+}

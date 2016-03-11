@@ -7,10 +7,7 @@ var WIDTH;
 var HEIGHT;
 var shouldRenderRings = false;
 
-var rings = [
-	new Ring(0, 270, 15, 0.5, 30, 1, 0),
-	new Ring(0, 360, 4, 0, HEIGHT / 2 - 10, 1, 0)
-	];
+var rings;
 
 /*var jobs = [
     new Job("Candy Sales", 0, 0.25, null, true),
@@ -30,6 +27,7 @@ var rings = [
 
 function onLoad()
 {
+    rings = new Array();
     canvasButton = document.getElementById('FunJobButton');
     
     if(window.innerWidth > 2000)
@@ -45,6 +43,9 @@ function onLoad()
     WIDTH = canvasButton.width;
     HEIGHT = canvasButton.height;
     
+    if(rings.length === 0)
+	   rings.push(new Ring(0, 270, 15, 0.5, 30, 1, 0));
+    
     ctx = canvasButton.getContext('2d');
     
     //load the styles for everything
@@ -58,30 +59,28 @@ function onLoad()
 
 function CreateRing()
 {
-	if(currentJob < 28)
+	if(currentJob < 25)
 	{
 		if(Money.money >= 50.00)
 		{
-			//Money.money = Money.money - 50.00;
+			Money.money = Money.money - 5.00;
 			var start = Math.floor((Math.random() * 360));
 			var stop = Math.floor((Math.random() * 360) + start);
 			var thickness = Math.floor((Math.random() * 40) + 1);
-			var inc = Math.floor((Math.random()) * 5 + 1);
+			var inc = Math.floor((Math.random()) * 3 + 1);
 			var fromLast = Math.floor((Math.random() * currentJob) + 20);
 			var halfHeight = HEIGHT / 2;
 			var fromCenter = Math.abs(Math.floor((Math.random() * halfHeight - thickness))); 
 			var opacity = Math.random();
 			if(opacity >= .95)
 				opacity = 1;
-			console.log(opacity);
 			var direction = Math.floor(Math.random() * 2);
 			var ring = new Ring(start, stop, thickness, inc, fromCenter, opacity, direction);
 			rings.push(ring);
-			console.log(fromCenter);
 			currentJob++;
 		}
 	}
-	gainmoney(.50);
+	gainmoney(0.25);
     
 }
 
@@ -109,6 +108,23 @@ function renderRings()
 {
     if(shouldRenderRings)
     {
+        ctx.strokeStyle = 'rgba(0,0,0, 1)';
+        ctx.shadowBlur = 0;
+        ctx.lineWidth = HEIGHT / 2 - 8;
+        ctx.globalAlpha = .5;
+        ctx.beginPath();
+        ctx.arc(WIDTH / 2, HEIGHT / 2, HEIGHT / 4 - 5, 0, Math.PI * 2, true);
+        ctx.stroke();
+        
+        ctx.strokeStyle = 'rgba(40,209,250, 1)';
+        ctx.shadowBlur = 2;
+        
+        ctx.lineWidth = 6;
+        ctx.globalAlpha = 1;
+        ctx.beginPath();
+        ctx.arc(WIDTH / 2, HEIGHT / 2, HEIGHT / 2 - 10, 0, 360);
+        ctx.stroke();
+        
         var inc = 0;
         for(var i = 0; i < rings.length; i++)
         {
