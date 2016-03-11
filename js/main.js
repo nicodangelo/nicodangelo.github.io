@@ -413,7 +413,7 @@ function resetGame()
     shouldSave = false;
     localStorage.clear();
     
-    achieveAmount = 0;
+    achieveAmount = 25;
     Money.money = 0.0;
     currentJob = 0;
     
