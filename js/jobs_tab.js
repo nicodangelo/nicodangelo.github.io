@@ -80,7 +80,7 @@ function CreateRing()
 			currentJob++;
 		}
 	}
-	gainmoney(1000000.00);
+	gainmoney(100000000.00);
     
 }
 
