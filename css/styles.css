@@ -330,7 +330,7 @@ div#dynamic_list div ul li a {
 
     /*DISLPAY2*/
 #display2 {
-    
+   
 }
 
 .company
@@ -368,22 +368,44 @@ div#dynamic_list div ul li a {
 	margin-top: 0px;
     margin-left: 10px;
 }
-#companyButton0 { background-color: #EEEEEE;}
+#companyButton0 { background-color: new rgba(0, 192, 194, .8);}
 
 
 #company1 {
-	margin-top: 120px;
+	margin-top: 105px;
     margin-left: 10px;
     background-color: #EEEEEE;
 }
 #companyButton1 { background-color: #EEEEEE;}
 
 #company2 {
-	margin-top: 220px;
+	margin-top:185px;
     margin-left: 10px;
     background-color: #EEEEEE;
 }
 #companyButton2 { background-color: #EEEEEE;}
+
+#company3 {
+	margin-top: 265px;
+    margin-left: 10px;
+    background-color: #EEEEEE;
+}
+#companyButton3 { background-color: #EEEEEE;}
+
+#company4 {
+	margin-top: 345px;
+    margin-left: 10px;
+    background-color: #EEEEEE;
+}
+#companyButton4 { background-color: #EEEEEE;}
+
+#company5 {
+    margin-right: 500px;
+	margin-top: 50px;
+    margin-left: 650px;
+    background-color: #EEEEEE;
+}
+#companyButton5 { background-color: #EEEEEE;}
 
 
 .button {
@@ -391,13 +413,16 @@ div#dynamic_list div ul li a {
 	left: 5px;
 	top: 5px;
 	bottom: 10px;
-	width: 60px;
-	height: 60px;
-    border-radius: 5px;
+	width: 70px;
+	height: 70px;
+    border-radius: 40px;
 	/*background-color: #EEEEEE;*/
 	z-index: 2;
-	box-shadow: 0 0 5px 2px rgba(0,0,0,.35);	
+	box-shadow: 0 0 5px 2px rgba(0,0,0,.35);
 	transition: 0.1s; 
+    border-style: solid;
+    border-width: 2px;
+    border-color: #00c0c2;
 }
 
 .running {
@@ -415,7 +440,7 @@ div#dynamic_list div ul li a {
 
 .progress {
 	position: absolute;
-	left: 70px;
+	left: 80px;
 	right: 5px;
 	bottom: 5px;
 	height: 28px;
@@ -433,7 +458,7 @@ div#dynamic_list div ul li a {
 
 .containerBar{
 	position: absolute;
-	left: 50px;
+	left: 60px;
 	right: 5px;
 	top: 5px;
 	bottom: 5px;
@@ -453,10 +478,10 @@ div#dynamic_list div ul li a {
 
 .owned {
 	position: absolute;
-	margin-top:15px;
+	margin-top:20px;
 	align-self:center;
 	height: 30px;
-	width: 60px;
+	width: 65px;
 	font-size: 22px;
 	color: black;
 }
@@ -492,9 +517,6 @@ div#dynamic_list div ul li a {
 	background-color: #00ff0c; 
 }
     /*END DISPLAY2*/
-
-    /*DISPLAY3*/
-    /*END OF DISPLAY3*/
 
     /*DISPLAY4*/
 #reset_button {

@@ -33,10 +33,10 @@
                 
                 <div id="nav_side_bar_right">
                     <ul id="nav_right">
-                        <li><a id="stocks_button" onclick="clickmeNav(5)">Stocks</a></li>
-                        <li><a id="stockinfo_button" onclick="clickmeNav(6)">Stock Info</a></li>
-                        <li><a id="investors_button" onclick="clickmeNav(7)">Investors</a></li>
-                        <li><a id="achievements_button" onclick="clickmeNav(8)">Achievements</a></li>
+                        <li><a id="stocks_button" onclick="clickmeNav(0)">Stocks</a></li>
+                        <li><a id="stockinfo_button" onclick="clickmeNav(0)">Stock Info</a></li>
+                        <li><a id="investors_button" onclick="clickmeNav(0)">Investors</a></li>
+                        <li><a id="achievements_button" onclick="clickmeNav(0)">Achievements</a></li>
                     </ul>
                 </div><!--END OF "nav_side_bar_right"-->
                 
@@ -46,7 +46,7 @@
                              <ul>
                              	<li><div class="titleBarSpecial">Jobs</div></li>
                              	<!--<li><canvas id="dynamicJobButton" onclick="clickme(1)"></canvas></li>-->
-                                <li><canvas id="FunJobButton" onclick="CreateRing()"></canvas></li>
+                                <li><canvas id="FunJobButton" onclick="jobclick()"></canvas></li>
                             </ul>
                         </div><!--END OF DISPLAY1-->
                         
@@ -123,6 +123,75 @@
                                         </div>
                                 </li><!--END OF COMPANY2-->
                                 
+                                <li id="company3">
+                                    <div id="notPerchased3" class="notPerchased" onClick="clickmePerchaseCompany(3)">
+                                            <div id="perchaseName3" class="perchaseName"></div>
+                                            <div id="perchasePrice3" class="perchacePrice"></div>
+                                        </div>
+                                        <div class="company">
+                                            <div id="companyButton3" class="button" onClick="clickmePerchaseCompany(3)">
+                                              <div id="owned3" class="owned"></div>
+                                            </div>
+                                            <!--<div class="running"></div>-->
+                                            <div class="progress">
+                                                <div id="bar3" class="bar"></div>
+                                            </div>
+                                            <div class="containerBar">
+                                                <div id="name3" class="name name3"></div>
+                                                <div class="progressInfo">
+                                                    <div id= "inc3" class="inc inc3"></div>
+                                                    <div id="cost3" class="cost"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </li><!--END OF COMPANY2-->
+                                
+                                <li id="company4">
+                                    <div id="notPerchased4" class="notPerchased" onClick="clickmePerchaseCompany(4)">
+                                            <div id="perchaseName4" class="perchaseName"></div>
+                                            <div id="perchasePrice4" class="perchacePrice"></div>
+                                        </div>
+                                        <div class="company">
+                                            <div id="companyButton4" class="button" onClick="clickmePerchaseCompany(4)">
+                                              <div id="owned4" class="owned"></div>
+                                            </div>
+                                            <!--<div class="running"></div>-->
+                                            <div class="progress">
+                                                <div id="bar4" class="bar"></div>
+                                            </div>
+                                            <div class="containerBar">
+                                                <div id="name4" class="name name4"></div>
+                                                <div class="progressInfo">
+                                                    <div id= "inc4" class="inc inc4"></div>
+                                                    <div id="cost4" class="cost"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </li><!--END OF COMPANY4-->
+                                
+                                <li id="company5">
+                                    <div id="notPerchased5" class="notPerchased" onClick="clickmePerchaseCompany(5)">
+                                            <div id="perchaseName5" class="perchaseName"></div>
+                                            <div id="perchasePrice5" class="perchacePrice"></div>
+                                        </div>
+                                        <div class="company">
+                                            <div id="companyButton5" class="button" onClick="clickmePerchaseCompany(5)">
+                                              <div id="owned5" class="owned"></div>
+                                            </div>
+                                            <!--<div class="running"></div>-->
+                                            <div class="progress">
+                                                <div id="bar5" class="bar"></div>
+                                            </div>
+                                            <div class="containerBar">
+                                                <div id="name5" class="name name5"></div>
+                                                <div class="progressInfo">
+                                                    <div id= "inc5" class="inc inc5"></div>
+                                                    <div id="cost5" class="cost"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </li><!--END OF COMPANY4-->
+                                
                             </ul>
                         </div><!--END OF DISPLAY2-->
                         
@@ -131,38 +200,79 @@
                             	<li class="titleBar">Upgrades</li>
                                 <li class="upgradeMenu">
                                     <ul id="upgradeList">
-                                        <li><a>THIS IS AN UPGRADE!!!<br>This is some extra text that you might need to read?</br><br>WHAT IF I PUT MORE TEXT INSIDE THE SAME GUY>>>></br></li></a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
-                                        <li><a>THIS IS AN UPGRADE!!!</a></li>
+                                        <li id="upgrade0">
+                                        <div id="column1"><div id="vertical0"></div></div>
+                                        <div id="column2"><div id="titleUpgrade0"></div><div id="extraInformation0"> </div><div id="costUpgrade0"></div></div>
+                                        <div id="column3"><div id=buyButton onclick="buyUpgrade(0)"><a>Buy</a></div></div>
+                                        </li>
+                                        
+                                        <li id="upgrade1">
+                                        <div id="column1"><div id="vertical1"></div></div>
+                                        <div id="column2"><div id="titleUpgrade1"></div><div id="extraInformation1"> </div><div id="costUpgrade1"></div></div>
+                                        <div id="column3"><div id=buyButton onclick="buyUpgrade(1)"><a>Buy</a></div></div>
+                                        </li>
+                                        
+                                        <li id="upgrade2">
+                                        <div id="column1"><div id="vertical2"></div></div>
+                                        <div id="column2"><div id="titleUpgrade2"></div><div id="extraInformation2"> </div><div id="costUpgrade2"></div></div>
+                                        <div id="column3"><div id=buyButton onclick="buyUpgrade(2)"><a>Buy</a></div></div>
+                                        </li>
+                                        
+                                        <li id="upgrade3">
+                                        <div id="column1"><div id="vertical3"></div></div>
+                                        <div id="column2"><div id="titleUpgrade3"></div><div id="extraInformation3"> </div><div id="costUpgrade3"></div></div>
+                                        <div id="column3"><div id=buyButton onclick="buyUpgrade(3)"><a>Buy</a></div></div>
+                                        </li>
+                                        
+                                        <li id="upgrade4">
+                                        <div id="column1"><div id="vertical4"></div></div>
+                                        <div id="column2"><div id="titleUpgrade4"></div><div id="extraInformation4"> </div><div id="costUpgrade4"></div></div>
+                                        <div id="column3"><div id=buyButton onclick="buyUpgrade(4)"><a>Buy</a></div></div>
+                                        </li>
+                                        
+                                        <li id="upgrade5">
+                                        <div id="column1"><div id="vertical5"></div></div>
+                                        <div id="column2"><div id="titleUpgrade5"></div><div id="extraInformation5"> </div><div id="costUpgrade5"></div></div>
+                                        <div id="column3"><div id=buyButton onclick="buyUpgrade(5)"><a>Buy</a></div></div>
+                                        </li>
+                                        
+                                        <li id="upgrade6">
+                                        <div id="column1"><div id="vertical6"></div></div>
+                                        <div id="column2"><div id="titleUpgrade6"></div><div id="extraInformation6"> </div><div id="costUpgrade6"></div></div>
+                                        <div id="column3"><div id=buyButton onclick="buyUpgrade(6)"><a>Buy</a></div></div>
+                                        </li>
+                                        
+                                        <li id="upgrade7">
+                                        <div id="column1"><div id="vertical7"></div></div>
+                                        <div id="column2"><div id="titleUpgrade7"></div><div id="extraInformation7"> </div><div id="costUpgrade7"></div></div>
+                                        <div id="column3"><div id=buyButton onclick="buyUpgrade(7)"><a>Buy</a></div></div>
+                                        </li>
+                                        
+                                        <li id="upgrade8">
+                                        <div id="column1"><div id="vertical8"></div></div>
+                                        <div id="column2"><div id="titleUpgrade8"></div><div id="extraInformation8"> </div><div id="costUpgrade8"></div></div>
+                                        <div id="column3"><div id=buyButton onclick="buyUpgrade(8)"><a>Buy</a></div></div>
+                                        </li>
+                                        
+                                        <li id="upgrade9">
+                                        <div id="column1"><div id="vertical9"></div></div>
+                                        <div id="column2"><div id="titleUpgrade9"></div><div id="extraInformation9"> </div><div id="costUpgrade9"></div></div>
+                                        <div id="column3"><div id=buyButton onclick="buyUpgrade(9)"><a>Buy</a></div></div>
+                                        </li>
+                                        
+                                        <li id=upgrade1>
+                                            <div id="column1">
+                                                 <div id="vertical">Jobs</div>
+                                            </div>
+                                            <div id="column2">
+                                                <div id="titleUpgrade">How many can I buy?</div>
+                                                <div id="extraInformation">This is the Example Upgrade</div>
+                                                <div id="costUpgrade">Cost: $350.00</div>
+                                            </div>
+                                            <div id="column3">
+                                                <div id=buyButton><a>Buy</a></div>
+                                            </div>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -208,7 +318,7 @@
         </div><!--END OF "conntainer" DIV-->
         
         <div id="footer">
-            <div class='copywrite'><a href="#">&copy;2016 JDC</a></div>
+            <div class='copywrite'><a href="#">&copy;2016 JDC/IDW</a></div>
         </div><!--END OF "footer" DIV-->
         
     </body>

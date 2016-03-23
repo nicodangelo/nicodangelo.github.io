@@ -23,9 +23,9 @@
 }
 
 #upgradeList {
-    margin-left: 20%;
+    margin-left: 15%;
     height: 450px;
-    width: 60%;
+    width: 70%;
     overflow: auto;
     border-style: solid;
     border-width: 6px;
@@ -34,26 +34,98 @@
     margin-bottom: 20px;
 }
 
-#upgradeList li a{
+#upgradeList li {
     border-radius: 8px;
     color:#000;
     display:block;
-    font-size: 1.2em;
     background-color: #00fcff;
-    padding: 5%;
-    margin:20px;
-    margin-top: 5px;
-    transition: 0.1s;
-    text-align: center;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 12%;
+    padding-top: 2%;
+    margin:25px;
+    margin-top: 10px;
     opacity: 0.8;
 }
 
-#upgradeList li a:hover {
-    background-color: #28eef0;
+#vertical{
+    transform: rotate(-90deg);
+    text-align: center;
+    font-size: 1.5em;
+}
+
+
+
+
+#column1 {
+    width: 10%;
+    float: left;
+    margin-top: 30px;
+    margin-left: 0px;
+}
+
+#column2 {
+    float: left;
+    width: 70%;
+    text-align: left;
+    margin-left: 0%;
+}
+
+#column3 {
+    width: 20%;
+    float: right;
+}
+
+#titleUpgrade {
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+#costUpgrade {
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+
+
+
+#buyButton {
+    border-radius: 6px;
+    color:#00fcff;
+    display:block;
+    background-color: #242424;
+    padding: 18%;
+    text-align: center;
+    transition: 0.3s;
+    opacity: 0.8;
+    float: right;
+    font-size: 1.8em;
+}
+
+#buyButton:hover{
+    background-color: #444444;
     opacity: 1.0;
 }
 
-#upgradeList li a:active {
-    background-color: #00c0c2;   
+#buyButton:active {
+     background-color: #0c0c0c;
     opacity: 1.0
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

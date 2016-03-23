@@ -18,7 +18,7 @@ var speed;
 var interval;
 var ups;
 var moneyDisplay;
-var shouldSave = true;
+var shouldSave = false;
 var navIndex = 1;
 var width = 0;
 var loaded = false;
@@ -27,29 +27,46 @@ var achieveAmount = 25;
 
 var companies = [
            //Company(name, owned, price,  inc, inflation, time, past)
-	/*0*/new Company("Candy Store", 0, 4, 0.25, 1.06, 2000, null),
-	/*1*/new Company("Hot Dog Stand",0, 70, 1.00, 1.14, 3000, null),
-	/*2*/new Company("Diner", 0, 325.00, 35.00, 1.17, 6000, null)
+	/*0*/new Company("Candy Store", 0, 4, 0.25, 1.06, 2000, 0),
+	/*1*/new Company("Hot Dog Stand",0, 70, 1.00, 1.14, 3000, 0),
+	/*2*/new Company("Diner", 0, 325.00, 35.00, 1.17, 6000, 0),
+    /*3*/new Company("Music Store", 0, 1300.00, 50.00, 1.19, 9000, 0),
+    /*4*/new Company("Pawn Shop", 0, 4000.00, 135.20, 1.17, 12000, 0),
+    /*5*/new Company("Jakian", 0, 10000.00, 250.00, 1.16, 14000, 0)
 ];
 
-var company_progress = [
-    /*0*/0, 
-    /*1*/0,
-	/*2*/0
-	];
+var upgrades = [
+    //Upgrade(type, name, text, price, perchased, action, actionAmount)
+    new Upgrade("Jobs", "Job lv.2", "Job Button x2",  50.00, false, "multiplier", 2),
+    new Upgrade("Jobs", "Job lv.3", "Job Button x2",  100.00, false, "multiplier", 2),
+    new Upgrade("Jobs", "Job lv.4", "Job Button x2",  1000.00, false, "multiplier", 2),
+    new Upgrade("Jobs", "Job lv.5", "Job Button x2",  2000.00, false, "multiplier", 2),
+    new Upgrade("Jobs", "Job lv.6", "Job Button x2",  12000.00, false, "multiplier", 2),
+    new Upgrade("Jobs", "Job lv.7", "Job Button x2",  24000.00, false, "multiplier", 2),
+    new Upgrade("Jobs", "Job lv.8", "Job Button x2",  96000.00, false, "multiplier", 2),
+    new Upgrade("Jobs", "Job lv.9", "Job Button x2",  125000.00, false, "multiplier", 2),
+    new Upgrade("Jobs", "Job lv.10", "Job Button x2", 12521846.00, false, "multiplier", 2),
+    new Upgrade("Jobs", "Job lv.11", "Job Button x5", 222222222.01, false, "multiplier", 5)
+];
 
 var save_companies = [
            //Company(name, owned, price,  inc, inflation, time, past)
-	/*0*/new Company("Candy Store", 0, 4, 0.25, 1.06, 2000, null),
-	/*1*/new Company("Hot Dog Stand",0, 70, 1.00, 1.14, 3000, null),
-	/*2*/new Company("Diner", 0, 325.00, 35.00, 1.17, 6000, null)
+	/*0*/new Company("Candy Store", 0, 4, 0.25, 1.06, 2000, 0),
+	/*1*/new Company("Hot Dog Stand",0, 70, 1.00, 1.14, 3000, 0),
+	/*2*/new Company("Diner", 0, 325.00, 35.00, 1.17, 6000, 0),
+    /*3*/new Company("Music Store", 0, 1300.00, 50.00, 1.19, 9000, 0),
+    /*4*/new Company("Pawn Shop", 0, 4000.00, 135.20, 1.17, 12000, 0),
+    /*5*/new Company("Jakian", 0, 10000.00, 250.00, 1.16, 14000, 0)
 ];
 
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
 //START OF THE GAME AND MAIN LOOP
 ////////////////////////////////////////////////--2--//////////////////////////////////////////////
 window.onload = function()
@@ -70,6 +87,8 @@ window.onload = function()
     //load the save if needed
     if(shouldSave)
         loadSave();
+	else
+		localStorage.clear();
 	
 	//initialize the companies
 	for(var i = 0; i < companies.length; i++)
@@ -78,6 +97,22 @@ window.onload = function()
 		$("#perchasePrice" + i).text("$" + (companies[i].price).toFixed(2));
         companies[i].past = new Date().getTime();
 	}
+    
+    //initialize the Upgrades
+    for(var i = 0; i < upgrades.length; i++)
+    {
+        if(upgrades[i].perchased === false)
+        {
+            $("#vertical" + i).text(upgrades[i].type);
+            $("#titleUpgrade" + i).text(upgrades[i].name);
+            $("#extraInformation" + i).text(upgrades[i].text);
+            $("#costUpgrade" + i).text("Cost: $" + fixNumber(upgrades[i].price, 2));
+        }
+        else
+        {
+             $("#upgrade" + i).css("display", "none");
+        }
+    }
     
     //all done then let the game begin
     loaded = true;
@@ -133,18 +168,18 @@ function updateCompanies(elapsedTime, now)
         //The perchaseButton(ie. show if it can be clicked or not)
         if(Money.money < companies[i].price)
         {
-            $("#companyButton" + i).css("background-color", "#929292");
+            $("#companyButton" + i).css("background-color", "rgba(0, 85, 86, .8)");
         }
         else
-        {   if($("#companyButton" + i).css("background-color") !== "#EEEEEE")
-                $("#companyButton" + i).css("background-color", "#EEEEEE");
+        {   if($("#companyButton" + i).css("background-color") !== "rgba(0, 192, 194, .8)")
+                $("#companyButton" + i).css("background-color", "rgba(0, 192, 194, .8)");
         }
 		
 		//The progress bar
 		if(companies[i].owned > 0)
 		{
-			if(company_progress[i] > 99)
-				company_progress[i] = 0;
+			if(companies[i].progress > 99)
+				companies[i].progress = 0;
 			if(companies[i].time < 100)
 			{
 				$("#bar"+ i).css("width",100+"%");
@@ -152,9 +187,9 @@ function updateCompanies(elapsedTime, now)
 			else
 			{
                 //this needs to desparatly be fixed but im like how?
-                company_progress[i] = (now - companies[i].past) / (companies[i].time / 100);
-                if(company_progress[i] <= 100)
-				    $("#bar"+ i).css("width",Math.max(company_progress[i], 1)+"%");
+                companies[i].progress = (now - companies[i].past) / (companies[i].time / 100);
+                if(companies[i].progress <= 100)
+				    $("#bar"+ i).css("width",Math.max(companies[i].progress, 1)+"%");
 			}
 			
 			//the name and perchase amount
@@ -200,15 +235,18 @@ function clickme(index)
 
 function clickmeNav(index)
 {
-     if(index === navIndex)
-	{
-        index = 1;
-	}
-    for(var i = 1; i <= 8; i++)
-    {   
-        $("#display" + i).css("display", "none");
-        $("#display" + index).css("display", "block");
-        navIndex = index;
+    if(index != 0)
+    {
+        if(index === navIndex)
+        {
+            index = 1;
+        }
+        for(var i = 1; i <= 8; i++)
+        {   
+            $("#display" + i).css("display", "none");
+            $("#display" + index).css("display", "block");
+            navIndex = index;
+        }
     }
 }
 
@@ -238,6 +276,30 @@ function clickmePerchaseCompany(index)
             cutTimeHalf();
         }
 	}
+}
+
+function buyUpgrade(index)
+{
+    if(Money.money >= upgrades[index].price)
+    {
+        Money.money = Money.money - upgrades[index].price;
+        $("#upgrade" + index).css("display", "none");
+        upgrades[index].perchased = true;
+        CreateRing();
+        switch(upgrades[index].type)
+        {
+            case "Jobs": 
+                switch(upgrades[index].action)
+                {
+                    case "multiplier" : jobMoney = jobMoney * upgrades[index].actionAmount;
+                    default: break;
+                }
+                
+                
+                break;
+            default: break;
+        }
+    }
 }
 
 
@@ -297,11 +359,11 @@ function degToRad(degree)
 
 function cutTimeHalf()
 {
-    for(var l = 0; l < company_progress.length; l++)
+    for(var l = 0; l < companies.length; l++)
     {
         companies[l].time = companies[l].time / 2;
     }
-	achieveAmount = achieveAmount * 2;
+	achieveAmount = achieveAmount * 4;
 }
 
 
@@ -335,7 +397,7 @@ function Job(name, price, inc, inflation, current)
 /*
     
 */
-function Company(name, owned, price,  inc, inflation, time, past)
+function Company(name, owned, price,  inc, inflation, time, progress, past)
 {
 	this.name = name;
 	this.owned = owned;
@@ -343,15 +405,20 @@ function Company(name, owned, price,  inc, inflation, time, past)
 	this.inc = inc;
     this.inflation = inflation;
     this.time = time;
-    this.past = past;
+    this.progress = progress;
 }
 
 //the upgrade object
-function Upgrade(name, text, price)
+function Upgrade(type, name, text, price, perchased, action, actionAmount)
 {
+    this.type = type;
     this.name = name;
     this.text = text;
     this.price = price;
+    this.perchased = perchased;
+    this.past = past;
+    this.action = action;
+    this.actionAmount = actionAmount;
 }
 
 
@@ -375,7 +442,6 @@ function save()
     setItem("achieveAmount", achieveAmount);
     
     localStorage.setItem("companies", JSON.stringify(companies));
-    localStorage.setItem("company_progress", JSON.stringify(company_progress));
 	localStorage.setItem("rings", JSON.stringify(rings));
 }
 
@@ -392,8 +458,6 @@ function loadSave()
     
     if(JSON.parse(localStorage.getItem("companies")) !== null)
         companies = JSON.parse(localStorage.getItem("companies"));
-    if(JSON.parse(localStorage.getItem("company_progress")) !== null)
-        company_progress = JSON.parse(localStorage.getItem("company_progress"));
 	if(JSON.parse(localStorage.getItem("rings")) != null)
 		rings = JSON.parse(localStorage.getItem("rings"));
 }
@@ -419,11 +483,6 @@ function resetGame()
     
 	rings.splice(0,rings.length);
     rings.push(new Ring(0, 270, 15, 0.5, 30, 1, 0));
-	
-	for(var x = 0; x < company_progress.length; x++)
-	{
-		company_progress[x] = 0;
-	}
     
     for(var i = 0; i < companies.length; i++)
     {
