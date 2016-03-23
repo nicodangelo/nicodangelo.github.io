@@ -18,7 +18,7 @@ var speed;
 var interval;
 var ups;
 var moneyDisplay;
-var shouldSave = false;
+var shouldSave = true;
 var navIndex = 1;
 var width = 0;
 var loaded = false;
