@@ -32,7 +32,7 @@ var companies = [
 	/*2*/new Company("Diner", 0, 325.00, 35.00, 1.17, 6000, 0),
     /*3*/new Company("Music Store", 0, 1300.00, 50.00, 1.19, 9000, 0),
     /*4*/new Company("Pawn Shop", 0, 4000.00, 135.20, 1.17, 12000, 0),
-    /*5*/new Company("Jakian", 0, 10000.00, 250.00, 1.16, 14000, 0)
+    /*5*/new Company("I'm Lost", 0, 10000.00, 250.00, 1.16, 14000, 0)
 ];
 
 var upgrades = [
