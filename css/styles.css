@@ -89,10 +89,9 @@ div#header{
 
 div#nav_left {
 	/*background-color: red;*/
-    width: 400px;
+    width: 350px;
     height: 100%;
     float: left;
-    min-height:300px;
 }
 
 ul#nav_left li a {
@@ -100,11 +99,11 @@ ul#nav_left li a {
     opacity: 0.8;
     color:#000;
     display:block;
-    font-size: 1.6em;
+    font-size: 1.4vw;
     background-color: #00fcff;
-    padding: 8%;
-    margin:12px;
-    margin-top: 25px;
+    padding: 3vh;
+    margin:1.6vw;
+    margin-top: 2.5vh;
 	margin-left: 30px;
     transition: 0.1s;
     text-align: center;
@@ -131,7 +130,7 @@ ul#nav_left li a:active {
 div #dynamic {
 	background-color: #8500F1;
     height: 100%;
-    margin-left:430px;
+    margin-left:380px;
 }
 
 
