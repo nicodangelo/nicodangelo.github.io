@@ -43,11 +43,15 @@ div#container{
 
 /******************************************************************************************/
 
+
+
+/******************************************************************************************/
+
 /*HEADER STYLES*/
 div#header{
     opacity: 0.9;
 	width: 100%;
-	height: 40px;
+	height: 4.6vh;
 	background-color: #353535;
 	margin: 0px auto;
     padding-bottom: 0px;
@@ -55,12 +59,12 @@ div#header{
 
 .logo{
     float: left;
-    margin-top: 5px;
-    margin-left: 10px;
+    margin-top: .5vh;
+    margin-left: .5vw;
 }
 
 .logo a{
-    font-size: 1.6em;
+    font-size: 1.5vw;
     color: #fff;
 }
 
@@ -73,476 +77,7 @@ div#header{
 
 /******************************************************************************************/
 
-/*INFO_DISPLAY STYLES*/
-div#info_display{
-    color:#fff;
-    width: 100%;
-	height: 40px;
-    background-color: #00fcff;
-	margin: 0px auto;
-    opacity: 0.8;
-}
 
-.amountDisplay {
-    color:#000;
-    margin-left: 10%;
-    font-size: 2.0em;
-}
-/*END OF INFO_DISPLAY STYLES*/
-
-/******************************************************************************************/
-
-/*NAV_SIDE_BAR_LEFT STYLES*/
-
-div#nav_side_bar_left {
-    width: 300px;
-    height: 100%;
-    margin-top: 10px;
-    float: left;
-    min-height:300px;
-}
-
-ul#nav_left {
-
-}
-
-ul#nav_left li {
-    list-style:none;
-}
-
-ul#nav_left li a {
-    border-radius: 10px;
-    opacity: 0.7;
-    color:#000;
-    display:block;
-    font-size: 1.6em;
-    background-color: #00fcff;
-    padding: 10%;
-    margin:12px;
-    margin-top: 30px;
-    transition: 0.1s;
-    text-align: center;
-}
-
-ul#nav_left li a:hover {
-    opacity: 1;
-    background-color: #28eef0;
-}
-
-ul#nav_left li a:active {
-    opacity: 1;
-    background-color: #00c0c2;   
-}
-
-.button1 {
-    float:none;
-    width:150px;
-    height:10%;
-    margin: 20px;
-    position: absolute;
-    background-color: #00fcff;
-    transition: 0.1s;
-    border-radius: 10px;
-    opacity: 0.7;
-}
-
-.button1:hover {
-    background-color: #28eef0;
-    opacity: 1.0
-}
-
-.button1:active {
-    background-color: #00c0c2;
-    opacity: 1.0
-}
-
-.center_text{
-    font-size: 1.4em;
-    color:#fff;
-    text-align: center;
-}
-
-/*END NAV_SIDE_BAR_LEFT STYLES*/
-
-/******************************************************************************************/
-
-/*NAV_SIDE_BAR_RIGHT STYLES*/
-
-div#nav_side_bar_right {
-    width: 300px;
-    height: 100%;
-    /*background-color:#009;*/
-    margin-top: 10px;
-    float:right;
-    min-height:300px;
-}
-
-ul#nav_right {
-    
-}
-
-ul#nav_right li {
-    list-style:none;
-}
-
-ul#nav_right li a {
-    border-radius: 10px;
-    color:#000;
-    display:block;
-    font-size: 1.6em;
-    background-color: #00fcff;
-    padding: 10%;
-    margin:12px;
-    margin-top: 30px;
-    transition: 0.1s;
-    text-align: center;
-    opacity: 0.7;
-}
-
-ul#nav_right li a:hover {
-    background-color: #28eef0;
-    opacity: 1.0;
-}
-
-ul#nav_right li a:active {
-    background-color: #00c0c2;   
-    opacity: 1.0
-}
-
-/*END NAV_SIDE_BAR_RIGHT STYLES*/
-
-/******************************************************************************************/
-
-/*DYNAMIC STYLES*/
-div#dynamic {
-	/*background-color: #8500F1;*/
-    height: 100%;
-    margin-left:310px;
-    margin-right:310px;
-    list-style: none;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #00c0c2;
-    border-radius: 10px;
-}
-
-/*IF YOU PUT A MARGIN IN HERE IT WILL EFFECT EVERYTHING*/
-div#dynamic_list {
-    min-height:150px;
-    list-style: none;
-}
-
-div#dynamic_list div {
-    text-align: center;
-}
-
-div#dynamic_list div ul {
-    list-style: none;
-    margin-top: 10px;
-}
-
-div#dynamic_list div ul li {
-    list-style: none;
-}
-
-div#dynamic_list div ul li a {
-    
-}
-
-    /*DISLPAY1*/
-#display1 {
-    display:block;
-}
-
-.titleBar {
-    border-radius: 10px;
-	background-color: #00fcff;
-	padding: 3px;
-	padding-bottom: 10px;
-	padding-top: 10px;
-	margin-bottom: 20px;
-	margin-left: 50px;
-	margin-right: 50px;
-	font-size: 28px;
-    opacity: 0.8;
-}
-
-.titleBarSpecial {
-    border-radius: 10px;
-	background-color: #00fcff;
-	padding: 3px;
-	padding-bottom: 10px;
-	padding-top: 10px;
-	margin-left: 50px;
-	margin-right: 50px;
-	font-size: 28px;
-    opacity: 0.8;
-	
-	margin-bottom: 10px;
-	z-index: 2;
-}
-
-#dynamicJobButton {
-}
-
-#active_job_button {
-    display:block;
-    background-color: #00fcff;
-    transition: 0.1s;
-    font-size: 1.9em;
-	padding-top: 15%;
-	padding-bottom: 15%;
-	padding-left: 5%;
-	padding-right: 5%;
-	margin-left: 90px;
-	margin-right: 90px;
-    border-radius: 10px;
-    opacity: 0.7;
-}
-
-#upgrade_job_button {
-   	display:block;
-    background-color: #00fcff;
-    transition: 0.1s;
-    font-size: 1.2em;
-	padding-top: 5%;
-	padding-bottom: 5%;
-	padding-left: 5%;
-	padding-right: 5%;
-	margin: 15px;
-	margin-left: 90px;
-	margin-right: 370px;
-    border-radius: 10px;
-    opacity: 0.7;
-}
-
-#display1 ul li a:hover{
-    background-color: #28eef0;  
-    opacity: 1.0;
-}
-
-#display1 ul li a:active {
-    background-color: #00c0c2; 
-    opacity: 1.0;
-}
-
-    /*END DISPLAY1*/
-
-    /*DISLPAY2*/
-#display2 {
-   
-}
-
-.company
-{
-	position:absolute;
-	width: 25%;
-	height: 70px;
-    /*background-color: #cccccc;*/
-}
-
-.notPerchased {
-	position:absolute;
-	width: 25%;
-	height: 70px;
-    background-color: #3E3E3E;
-	z-index: 5;
-}
-
-.notPerchased:hover { background-color: #232323; }
-
-.notPerchased:active { background-color: #595959; }
-
-.perchaseName {
-	margin-left: -5px;
-	margin-top: 12px;
-	color: white;
-}
-
-.perchacePrice {
-	color: white;
-	margin-top: 5px;
-}
-
-#company0 {
-	margin-top: 0px;
-    margin-left: 10px;
-}
-#companyButton0 { background-color: new rgba(0, 192, 194, .8);}
-
-
-#company1 {
-	margin-top: 105px;
-    margin-left: 10px;
-    background-color: #EEEEEE;
-}
-#companyButton1 { background-color: #EEEEEE;}
-
-#company2 {
-	margin-top:185px;
-    margin-left: 10px;
-    background-color: #EEEEEE;
-}
-#companyButton2 { background-color: #EEEEEE;}
-
-#company3 {
-	margin-top: 265px;
-    margin-left: 10px;
-    background-color: #EEEEEE;
-}
-#companyButton3 { background-color: #EEEEEE;}
-
-#company4 {
-	margin-top: 345px;
-    margin-left: 10px;
-    background-color: #EEEEEE;
-}
-#companyButton4 { background-color: #EEEEEE;}
-
-#company5 {
-    margin-right: 500px;
-	margin-top: 50px;
-    margin-left: 650px;
-    background-color: #EEEEEE;
-}
-#companyButton5 { background-color: #EEEEEE;}
-
-
-.button {
-	position: absolute;
-	left: 5px;
-	top: 5px;
-	bottom: 10px;
-	width: 70px;
-	height: 70px;
-    border-radius: 40px;
-	/*background-color: #EEEEEE;*/
-	z-index: 2;
-	box-shadow: 0 0 5px 2px rgba(0,0,0,.35);
-	transition: 0.1s; 
-    border-style: solid;
-    border-width: 2px;
-    border-color: #00c0c2;
-}
-
-.running {
-	position: absolute;
-	left: 5px;
-	top: 5px;
-	bottom: 10px;
-	width: 60px;
-	height: 60px;
-	background-color: #888888;
-	z-index: 2;
-	box-shadow: 0 0 5px 2px rgba(0,0,0,.35);	
-	transition: 0.1s; 
-}
-
-.progress {
-	position: absolute;
-	left: 80px;
-	right: 5px;
-	bottom: 5px;
-	height: 28px;
-	background-color: black;
-}
-
-.progressInfo {
-	position: absolute;
-	left: 20px;
-	right: 0px;
-	bottom: 32px;
-	height: 28px;
-	background-color: #353535;
-}
-
-.containerBar{
-	position: absolute;
-	left: 60px;
-	right: 5px;
-	top: 5px;
-	bottom: 5px;
-}
-
-.name {
-	position: absolute;
-	width: 150px;
-	height: 10px;
-	left: 2px;
-	top: 4px;
-	text-align:right;
-	font-size: 16px;
-	color: white;
-	z-index: 2;
-}
-
-.owned {
-	position: absolute;
-	margin-top:20px;
-	align-self:center;
-	height: 30px;
-	width: 65px;
-	font-size: 22px;
-	color: black;
-}
-
-.cost {
-	position: absolute;
-	top: 4px;
-	right: 5px;
-	height: 30px;
-	width: 150px;
-	text-align: right;
-	font-size: 16px;
-	color:white;
-	/*z-index: 1;*/
-	
-}
-
-.inc {
-	position: absolute;
-	top: 33px;
-	left: 20%;
-	height: 30px;
-	width: 160px;
-	text-align: right;
-	font-size: 18px;
-	color:white;
-}
-
-.bar {
-	position: absolute;    
-	width: 10%;     
-	height: 100%;
-	background-color: #00ff0c; 
-}
-    /*END DISPLAY2*/
-
-    /*DISPLAY4*/
-#reset_button {
-   	display:block;
-    background-color: #00fcff;
-    transition: 0.1s;
-    font-size: 1.2em;
-	padding-top: 5%;
-	padding-bottom: 5%;
-	padding-left: 5%;
-	padding-right: 5%;
-	margin: 15px;
-	margin-left: 110px;
-	margin-right: 110px;
-}
-
-#display4 ul li a:hover{
-    background-color: #28eef0;  
-}
-
-#display4 ul li a:active {
-    background-color: #00c0c2;  
-}
-    /*END OF DISPLAY4*/
-
-/*END DYNAMIC STYLES*/
 
 /******************************************************************************************/
 
@@ -550,7 +85,7 @@ div#dynamic_list div ul li a {
 
 div#footer{
     width: 100%;
-	height: 30px;
+	height: 3.0vh;
 	background-color: #252525;
 	margin: 0px auto;
     position: fixed;
@@ -561,65 +96,15 @@ div#footer{
 
 .copywrite{
     float: left;
-    margin-top: 6px;
-    margin-left: 10px;
+    margin-top: .5vh;
+    margin-left: 1vw;
 }
 
 .copywrite a{
-    font-size: 1.0em;
+    font-size: .9vw;
     color: #fff;
 }
 
 /*END FOOTER STYLES*/
-
-/******************************************************************************************/
-
-/*POPUP STYLES*/
-
-	/*LINKS*/
-#popup a, #popup a:visited {
-	color:#fff; 
-	text-decoration:none; 
-	font-size:16px; 
-	background:#000; 
-	padding:2px; 
-}
-
-#popup a:hover, #popup a:active {
-	color:#fff; 
-	text-decoration:none; 
-	font-size:16px; 
-	background:#333; 
-	padding:2px; 
-}
-	/*END OF LINKS*/
-
-div#blanket {
-   background-color:#111;
-   opacity: 0.65;
-   background:none;
-   position:absolute;
-   z-index: 9001;
-   top:0px;
-   left:0px;
-   width:100%;
-}
-
-div#popUpDiv {
-	position:absolute;
-	background:url(../images/pop-back.jpg) no-repeat;
-	width:400px;
-	height:400px;
-	border:5px solid #000;
-	z-index: 9002;
-}
-
-#popUpDiv a {
-	position:relative; 
-	top:20px; 
-	left:20px
-}
-
-/*END POPUP STYLES*/
 
 /******************************************************************************************/
