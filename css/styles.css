@@ -29,9 +29,9 @@ body, html {
 
 body{
 	font-family: 'Georgia';
-	background-image: url("../images/Background.jpg");
+	/*background-image: url("../images/Background.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;*/
 }
 
 a{
@@ -63,7 +63,7 @@ div#header{
 .logo{
     float: left;
     margin-top: 5px;
-    margin-left: 10px;
+    margin-left: 30px;
 }
 
 .logo a{
@@ -86,8 +86,8 @@ div#header{
 
 /*NAV_SIDE_BAR_LEFT STYLES*/
 
-div#nav_left {
-	background-color: red;
+div#nav {
+	/*background-color: red;*/
     width: 350px;
     height: 100%;
     float: left;
@@ -95,7 +95,7 @@ div#nav_left {
 
 ul#nav_left li a {
     border-radius: 10px;
-    opacity: 0.8;
+    opacity: 0.9;
     color:#000;
     display:block;
     font-size: 1.4vw;
@@ -127,7 +127,7 @@ ul#nav_left li a:active {
 /******************************************************************************************/
 /*DYNAMIC STYLES*/
 div #dynamic {
-	background-color: #8500F1;
+	/*background-color: #8500F1;*/
     height: 100%;
     margin-left:380px;
 }

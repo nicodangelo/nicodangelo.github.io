@@ -1,6 +1,10 @@
 <!doctype html>
 <html>
     <head>
+		<script src="js/main.js"></script>
+		<script src="js/config.js"></script>
+		<script src="js/job_tab.js"></script>
+		<script src="js/jquery/jquery-1.12.0.js"></script>
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
@@ -10,38 +14,38 @@
         
         <div id="container">
 			<div id="game_container">
-				<div id="nav_left">
+				<div id="nav">
 					<ul id="nav_left">
 						<li><a id="jobs_button" onclick="clickNav(1)">Job</a></li>
-						<li><a id="companies_button" onclick="clickNav(1)">Companies</a></li>
-						<li><a id="upgrades_button" onclick="clickNav(1)">Upgrades</a></li>
-						<li><a id="investments_button" onclick="clickNav(1)">Investments</a></li>
-						<li><a id="stocks_button" onclick="clickNav(1)">Stocks</a></li>
-						<li><a id="goals_button" onclick="clickNav(1)">Goals</a></li>
-						<li><a id="options_button" onclick="clickNav(1)">Options</a></li>
+						<li><a id="companies_button" onclick="clickNav(2)">Companies</a></li>
+						<li><a id="upgrades_button" onclick="clickNav(3)">Upgrades</a></li>
+						<li><a id="investments_button" onclick="clickNav(4)">Investments</a></li>
+						<li><a id="stocks_button" onclick="clickNav(5)">Stocks</a></li>
+						<li><a id="goals_button" onclick="clickNav(6)">Goals</a></li>
+						<li><a id="options_button" onclick="clickNav(7)">Options</a></li>
 					</ul>
 				</div><!--END OF "nav_left" DIV-->
 				
 				<div id="dynamic">
 					<div id="display1">
 						 <ul>
-							<li><div class="titleBarSpecial">Jobs</div></li>
+							<!--<li><div class="titleBarSpecial">Jobs</div></li>-->
 							<!--<li><canvas id="dynamicJobButton" onclick="clickme(1)"></canvas></li>-->
-							<li><canvas id="FunJobButton" onclick="jobclick()"></canvas></li>
+							<li><canvas id="jobButton" onclick="jobclick()"></canvas></li>
                          </ul>
 					</div><!--END OF "display1 Div-->
-					<!--<div id="display2"></div><!--END OF "display2 Div-->
-					<!--<div id="display3"></div><!--END OF "display3 Div-->
-					<!--<div id="display4"></div><!--END OF "display4 Div-->
-					<!--<div id="display5"></div><!--END OF "display5 Div-->
-					<!--<div id="display6"></div><!--END OF "display6 Div-->
-					<!--<div id="display7"></div><!--END OF "display7 Div-->
+					<div id="display2"> companies</div><!--END OF "display2 Div-->
+					<div id="display3"> upgrades</div><!--END OF "display3 Div-->
+					<div id="display4"> investors</div><!--END OF "display4 Div-->
+					<div id="display5"> stocks</div><!--END OF "display5 Div-->
+					<div id="display6"> goals</div><!--END OF "display6 Div-->
+					<div id="display7"> options</div><!--END OF "display7 Div-->
 				</div><!--END OF "dynamic" DIV-->
 			</div><!--END OF "game_container" DIV-->
         </div><!--END OF "conntainer" DIV-->
         
         <div id="footer">
-            <div class='copywrite'><a href="#">&copy;2016 JDC/IDW</a></div>
+            <div class="copywrite"><a href="#">&copy;2016 JDC/IDW</a></div>
         </div><!--END OF "footer" DIV-->
     </body>
 </html>
