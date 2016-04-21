@@ -83,6 +83,31 @@ div#header{
 
 
 /******************************************************************************************/
+/*MONEYDISPLAY*/
+#moneyDisplay {
+	z-index: 4;
+	position: absolute;
+	margin-left:51vw;
+	margin-top: -3vh;
+	background-color:#00fcff;
+	text-align:center;
+	font-size:1.6vw;
+	padding: 3vh;
+	width: 25vw;
+	border-radius: 10px;
+}
+
+#moneyDisplay a{
+	font-size:1.8vw;
+}
+
+
+/*END MONEY DISPLAY*/
+/******************************************************************************************/
+
+
+
+/******************************************************************************************/
 
 /*NAV_SIDE_BAR_LEFT STYLES*/
 

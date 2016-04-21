@@ -21,6 +21,9 @@ window.onload = function()
 	
 	localStorage.clear();
 	
+	//set all default variables
+	Money.money = 0.00;
+	
 	//Update needed variables
 	var timeCounter = 0;
 	var pastTimeCounter = 0;
@@ -66,6 +69,9 @@ function update()
 	//Update the actual time of the game for offline game running
 	var pastTimeCounter = new Date().getTime();
 	setItem("varPastTimeCounter", pastTimeCounter);
+	
+	var moneyDisplayText = document.getElementById("moneyDisplayText");
+	moneyDisplayText.innerHTML = ("$" + fixNumber(Money.money, 2));
 }
 
 

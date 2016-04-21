@@ -92,7 +92,7 @@ function CreateRing()
 
 function jobclick()
 {
-    gainmoney(jobMoney, jobMoney, 0);
+    gainmoney(jobMoney);
 	CreateRing();
 }
 
